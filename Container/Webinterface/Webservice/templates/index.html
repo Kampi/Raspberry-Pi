@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/jquery-1.4.2.min.js') }}"></script>
+		<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/socket.io.min.js') }}"></script>
+		<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/main.js') }}"></script>
+		<script type = "text/javascript" src = "{{ url_for('static', filename = 'js/send.js') }}"></script>
+		<script type="text/javascript" charset="utf-8"></script>
+		<title>Raspberry Pi GPIO-Interface</title>
+	</head>
+	<body>
+		<img src = "https://upload.wikimedia.org/wikipedia/en/c/cb/Raspberry_Pi_Logo.svg" alt = "Logo" align = "right" height = "253" width = "200">
+		<table id = "table_index">
+			<tr>
+				<th>GPIO</th>
+				<th>On</th>
+				<th>Off</th>
+			</tr>
+			<tr>
+				<td>
+					<label>17</label>
+				</td>
+				<td>
+					<input type = "radio" id = "On_17" name = "17" value = "On">
+				</td>
+				<td>
+					<input type = "radio" id = "Off_17" name = "17" value = "Off" checked = "checked">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>27</label>
+				</td>
+				<td>
+					<input type = "radio" id = "On_27" name = "27" value = "On">
+				</td>
+				<td>
+					<input type = "radio" id = "Off_27" name = "27" value = "Off" checked = "checked">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type = "Button" id = "ButtonCloseApplication" value = "Close" />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

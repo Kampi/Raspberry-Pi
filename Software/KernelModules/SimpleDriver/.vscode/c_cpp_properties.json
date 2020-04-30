@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Raspberry Pi",
+            "targetArchitecture": "arm",
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${Raspberry_Kernel}/include",
+                    "${Raspberry_Kernel}arch/arm/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "${workspaceFolder}",
+                "${Raspberry_Kernel}/include",
+                "${Raspberry_Kernel}/arch/arm/include"
+            ]
+        }
+    ],
+    "version": 4
+}

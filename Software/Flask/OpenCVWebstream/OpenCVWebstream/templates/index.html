@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <title>Raspberry Pi OpenCV Webstream</title>
+        <link rel = "stylesheet" href = "{{ url_for('static', filename='css/index.css') }}">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="/static/js/index.js"></script>
+        <script type="text/javascript">
+            var Paused = {{ data.Paused|tojson }}
+        </script>
+        {% endblock %}
+    </head>
+    <body onload = "onPageLoad()">
+        <header>
+            <h1 class = "Title">Raspberry Pi OpenCV Webstream</h1>
+        </header>
+        <main>
+            <table width = "100%" border = "0">
+                <tr>
+                    <td>
+                        <img height = "800" width = "800" src = "{{ url_for('VideoFrame') }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id = "ButtonStart" class = "ActionButton" onclick = "Start()" enabled>Start</button>
+                        <button id = "ButtonPause" class = "ActionButton" onclick = "Pause()" disabled>Pause</button>
+                        <button id = "ButtonStop" class = "ActionButton" onclick = "Stop()">Shutdown</button>
+                    </td>
+                </tr>
+            </table>
+        </main>
+    </body>
+    <footer>
+        <a target = "_blank" href = "https:\\www.kampis-elektroecke.de">Kampis Elektroecke</a>
+    </footer>
+</html>

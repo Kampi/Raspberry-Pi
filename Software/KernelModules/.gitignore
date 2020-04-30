@@ -1,0 +1,12 @@
+# Ignore module files
+*.cmd
+*.mod.*
+*.symvers
+*.order
+*.o
+.tmp_versions/
+
+# Ignore hidden files
+*.*~
+
+

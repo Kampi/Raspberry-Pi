@@ -1,0 +1,3396 @@
+[
+    {
+        "id": "c7135cb1.d9088",
+        "type": "tab",
+        "label": "CurrentWeather",
+        "disabled": false,
+        "info": "# CurrentWeather\n\nRead the current weather from `OpenWeatherMap.org` as JSON and extract the data to visualize them.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "5bd259d5.4c3598",
+        "type": "tab",
+        "label": "History",
+        "disabled": false,
+        "info": "# History\n\nPlot the temperature, the humidity and the pressure for a whole day.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "41fb1ff7.804e7",
+        "type": "tab",
+        "label": "WeatherMap",
+        "disabled": false,
+        "info": "# WeatherMap\n\nShow the weather map for the current region. Based on `Leaflet` and the weather layer from `OpenWeatherMap.org`.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "efaa1475.d638b8",
+        "type": "tab",
+        "label": "ForecastWeather",
+        "disabled": false,
+        "info": "# ForecastWeather\n\nRead the 5 day weather forecast from `OpenWeatherMap.org` as JSON and extract the data to visualize them for a chosen day.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "b26426f0.8849e8",
+        "type": "tab",
+        "label": "Logger",
+        "disabled": false,
+        "info": "# Logger\n\nSave the weather data into a SQL database or log them for debug purposes.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "de180629.f440b8",
+        "type": "tab",
+        "label": "Settings",
+        "disabled": false,
+        "info": "# Settings\n\nUse this for the configuration of the application.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "12234f31.725061",
+        "type": "tab",
+        "label": "About",
+        "disabled": false,
+        "info": "# About\n\nAbout this application.\n\n## Maintainer\n\n- [Daniel Kampert](DanielKampert@kampis-elektroecke.de)"
+    },
+    {
+        "id": "ff40eb7.cb65f18",
+        "type": "ui_group",
+        "z": "",
+        "name": "Today",
+        "tab": "19b2792e.9f0f27",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "19b2792e.9f0f27",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Today",
+        "icon": "today",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e8539a20.b91588",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Weather Station",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#4B7930",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#373535",
+                    "edited": true
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "group-borderColor": {
+                    "value": "#666666",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#353535",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#545050",
+                    "edited": true
+                },
+                "widget-borderColor": {
+                    "value": "#202020",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Raspberry Pi Weather Station",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 100,
+                "sy": 45,
+                "gx": 10,
+                "gy": 10,
+                "cx": 3,
+                "cy": 3,
+                "px": 5,
+                "py": 5
+            }
+        }
+    },
+    {
+        "id": "f7b37126.2aaa8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Settings",
+        "icon": "settings",
+        "order": 5
+    },
+    {
+        "id": "51edf494.79fa9c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Options",
+        "tab": "f7b37126.2aaa8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "786044d0.6dc3ec",
+        "type": "ui_group",
+        "z": "",
+        "name": "User Input",
+        "tab": "f7b37126.2aaa8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "579235b4.37ea7c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "About",
+        "icon": "help_outline",
+        "order": 6
+    },
+    {
+        "id": "73372a53.192d94",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Forecast",
+        "icon": "forward_5",
+        "order": 4
+    },
+    {
+        "id": "b76347b4.e820b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Forecast",
+        "tab": "73372a53.192d94",
+        "order": 1,
+        "disp": false,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "3b750bcb.26c254",
+        "type": "ui_group",
+        "z": "",
+        "name": "UI",
+        "tab": "73372a53.192d94",
+        "order": 2,
+        "disp": false,
+        "width": "2",
+        "collapse": false
+    },
+    {
+        "id": "2a8d75bb.d576ea",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Weather map",
+        "icon": "map",
+        "order": 3
+    },
+    {
+        "id": "63a66c4d.1eb944",
+        "type": "ui_group",
+        "z": "",
+        "name": "Map",
+        "tab": "2a8d75bb.d576ea",
+        "order": 2,
+        "disp": false,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "80826d65.baacb",
+        "type": "ui_group",
+        "z": "",
+        "name": "About",
+        "tab": "579235b4.37ea7c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7c7db363.4f26fc",
+        "type": "sqlitedb",
+        "z": "",
+        "db": "/home/pi/WeatherStation/Weather.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "cd45fc22.22276",
+        "type": "ui_group",
+        "z": "",
+        "name": "Logging",
+        "tab": "f7b37126.2aaa8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "eb724317.b6e2e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Contact",
+        "tab": "579235b4.37ea7c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "dc4c2fe5.66c82",
+        "type": "ui_group",
+        "z": "",
+        "name": "UI",
+        "tab": "2a8d75bb.d576ea",
+        "order": 1,
+        "disp": false,
+        "width": "7",
+        "collapse": false
+    },
+    {
+        "id": "e12d006a.aad93",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Today`s History",
+        "icon": "trending_up",
+        "order": 2
+    },
+    {
+        "id": "afdd9168.9f64b",
+        "type": "ui_group",
+        "z": "",
+        "name": "UI",
+        "tab": "e12d006a.aad93",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "387d6a4d.aeeca6",
+        "type": "ui_group",
+        "z": "",
+        "name": "Temperature",
+        "tab": "e12d006a.aad93",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c630e481.c26278",
+        "type": "ui_group",
+        "z": "",
+        "name": "Humidity",
+        "tab": "e12d006a.aad93",
+        "order": 3,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8c4b552a.a17fe8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Pressure",
+        "tab": "e12d006a.aad93",
+        "order": 4,
+        "disp": false,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b3f9a6cf.ff6198",
+        "type": "fritzbox-config",
+        "z": "",
+        "name": "Host",
+        "host": "fritz.box",
+        "port": "49000",
+        "ssl": true
+    },
+    {
+        "id": "193fa663.a3480a",
+        "type": "fritzbox-config",
+        "z": "",
+        "name": "Router",
+        "host": "192.168.178.1",
+        "port": "49443",
+        "ssl": true
+    },
+    {
+        "id": "aa72426e.f686b",
+        "type": "json",
+        "z": "c7135cb1.d9088",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "b2533627.3a5478"
+            ]
+        ]
+    },
+    {
+        "id": "5bbc66fe.4256b8",
+        "type": "http request",
+        "z": "c7135cb1.d9088",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "aa72426e.f686b"
+            ]
+        ]
+    },
+    {
+        "id": "6e73def.4bdbd2",
+        "type": "debug",
+        "z": "c7135cb1.d9088",
+        "name": "CurrentWeather",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 120,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "aaa695f0.511a08",
+        "type": "change",
+        "z": "c7135cb1.d9088",
+        "name": "SetURL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "http://api.openweathermap.org/data/2.5/weather?q={CITY}&APPID={APPID}",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{APPID}",
+                "fromt": "str",
+                "to": "Config.APIKey",
+                "tot": "global"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{CITY}",
+                "fromt": "str",
+                "to": "Config.City",
+                "tot": "global"
+            },
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 40,
+        "wires": [
+            [
+                "5bbc66fe.4256b8"
+            ]
+        ]
+    },
+    {
+        "id": "66f96f96.0a29c",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "GetCurrentData",
+        "func": "flow.set(\"Data\", msg.payload)\n\nmsg = {\n    lon : msg.payload.coord.lon,\n    lat : msg.payload.coord.lat\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "e433c582.9f4c68"
+            ]
+        ]
+    },
+    {
+        "id": "6b7b534e.de22ac",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 8,
+        "width": "2",
+        "height": "2",
+        "name": "WindSpeedLabel",
+        "label": "Wind speed",
+        "format": "{{msg.payload}} m/s",
+        "layout": "col-center",
+        "x": 1210,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6868cecc.6d80c",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 7,
+        "width": "2",
+        "height": "2",
+        "name": "SunriseSunSetLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1220,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c94dfb94.f38108",
+        "type": "link out",
+        "z": "c7135cb1.d9088",
+        "name": "CurrentWeatherData",
+        "links": [
+            "5db9f314.b301ac",
+            "b0739d72.50f17",
+            "fcc857fb.bbb4c8",
+            "bb695fe5.1229a"
+        ],
+        "x": 355,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "b2533627.3a5478",
+        "type": "switch",
+        "z": "c7135cb1.d9088",
+        "name": "ErrorHandling",
+        "property": "payload.cod",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "6e73def.4bdbd2",
+                "66f96f96.0a29c",
+                "c94dfb94.f38108"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bf3a6e2.ceba39",
+        "type": "inject",
+        "z": "c7135cb1.d9088",
+        "name": "SwitchTimer",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "fc77388b.b371f8",
+                "637ef000.1cb94",
+                "5c70ea64.588e14",
+                "ca129156.db6a2",
+                "814d779f.ef3128"
+            ]
+        ]
+    },
+    {
+        "id": "fc77388b.b371f8",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "IncreaseTempCounter",
+        "func": "var Temp = flow.get(\"TempCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 2)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"TempCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "60c9852f.39f7ec",
+        "type": "inject",
+        "z": "c7135cb1.d9088",
+        "name": "ReloadData",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "aaa695f0.511a08"
+            ]
+        ]
+    },
+    {
+        "id": "637ef000.1cb94",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "IncreaseRiseSetCounter",
+        "func": "var Temp = flow.get(\"RiseSetCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 1)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"RiseSetCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69514ed6.62fa3",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SwitchRiseSet",
+        "func": "var Counter = flow.get(\"RiseSetCounter\");\nvar Topics = \n[\n    \"Sunrise\",\n    \"Sunset\"\n];\n\nif(Counter === 0)\n{\n    Temp = flow.get(\"Data\").sys.sunrise;\n}\nelse\n{\n    Temp = flow.get(\"Data\").sys.sunset;\n}\n\n// Set the message\nmsg = {\n    topic : Topics[Counter],\n    payload : new Date(Temp * 1000).toLocaleTimeString()\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 240,
+        "wires": [
+            [
+                "6868cecc.6d80c"
+            ]
+        ]
+    },
+    {
+        "id": "e0f13dd5.dc42a",
+        "type": "link in",
+        "z": "c7135cb1.d9088",
+        "name": "Refresh",
+        "links": [
+            "643893f8.e39c8c"
+        ],
+        "x": 775,
+        "y": 320,
+        "wires": [
+            [
+                "69514ed6.62fa3",
+                "62587865.269f48",
+                "43b2c722.cbce18",
+                "e662d67a.7ace18",
+                "7519ecb3.5e6134",
+                "e5f620be.c91c9",
+                "3fd48b64.040134",
+                "b00ca9c9.061078",
+                "e70c0ed1.c1cb6"
+            ]
+        ]
+    },
+    {
+        "id": "b0ed1672.e95618",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 3,
+        "width": "2",
+        "height": "2",
+        "name": "TemperatureLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload - 273 | number: 2}}  °C",
+        "layout": "col-center",
+        "x": 1210,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "62587865.269f48",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SwitchTemperature",
+        "func": "var Temp = 0;\nvar Counter = flow.get(\"TempCounter\");\nvar Topics = \n[\n    \"Temperature\",\n    \"Max. Temperature\",\n    \"Min. Temperature\"\n];\n\nif(Counter === 0)\n{\n    Temp = flow.get(\"Data\").main.temp;\n}\nelse if(Counter == 1)\n{\n    Temp = flow.get(\"Data\").main.temp_max;\n}\nelse\n{\n    Temp = flow.get(\"Data\").main.temp_min;\n}\n\n// Set the message\nmsg = {\n    topic : Topics[Counter],\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 930,
+        "y": 280,
+        "wires": [
+            [
+                "b0ed1672.e95618"
+            ]
+        ]
+    },
+    {
+        "id": "43b2c722.cbce18",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SwitchPressure",
+        "func": "var Temp = 0;\nvar Data = flow.get(\"Data\").main;\nvar Counter = flow.get(\"PresCounter\");\n\n// Switch if sea level object exist\nif(typeof Data.sea_level != \"undefined\") \n{\n    if(Counter === 0)\n    {\n        Topic =  \"Pressure (Ground)\";\n        Temp = Data.grnd_level;\n    }\n    else\n    {\n        Topic = \"Pressure (Sea)\";\n        Temp = Data.sea_level ;\n    }\n}\nelse\n{\n    Topic = \"Pressure\"\n    Temp = Data.pressure;\n}\n\n// Set the message\nmsg = {\n    topic : Topic,\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 320,
+        "wires": [
+            [
+                "2e186420.b77f0c"
+            ]
+        ]
+    },
+    {
+        "id": "2e186420.b77f0c",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 6,
+        "width": "2",
+        "height": "2",
+        "name": "PressureLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload}} hpa",
+        "layout": "col-center",
+        "x": 1200,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5c70ea64.588e14",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "IncreasePresCounter",
+        "func": "var Temp = flow.get(\"PresCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 1)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"PresCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8722c9eb.0dda98",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "name": "LocationLabel",
+        "label": "",
+        "format": "{{msg.payload}} ",
+        "layout": "col-center",
+        "x": 1200,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e662d67a.7ace18",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SwitchLocation",
+        "func": "var Counter = flow.get(\"RiseSetCounter\");\n\nif(Counter === 0)\n{\n    Temp = flow.get(\"Data\").name + \", \" + flow.get(\"Data\").sys.country\n}\nelse\n{\n    var Latitude = flow.get(\"Data\").coord.lat.toLocaleString(\"de-DE\");\n    var Longitude = flow.get(\"Data\").coord.lon.toLocaleString();\n    Temp = \"Latitude: \" + Latitude + \" - \" + \"Longitude: \" + Longitude;\n}\n\n// Set the message\nmsg = {\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 200,
+        "wires": [
+            [
+                "8722c9eb.0dda98"
+            ]
+        ]
+    },
+    {
+        "id": "ca129156.db6a2",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "IncreaseLocationCounter",
+        "func": "var Temp = flow.get(\"LocCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 1)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"LocCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7519ecb3.5e6134",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SwitchHumidityCloudinessUV",
+        "func": "var Temp = 0;\nvar Counter = flow.get(\"HumCloudUVCounter\");\nvar Topics = \n[\n    \"Humidity\",\n    \"Cloudiness\",\n    \"UV\"\n];\n\nif(Counter === 0)\n{\n    Color = \"white\";\n    Temp = flow.get(\"Data\").main.humidity + \"%\";\n}\nelse if(Counter == 1)\n{\n    Color = \"white\";\n    Temp = flow.get(\"Data\").clouds.all + \"%\";\n}\nelse\n{\n    Temp = flow.get(\"UV\").value;\n    if(Temp <=  2.9)\n    {\n        Temp = \"Low\";\n        Color = \"green\";\n    }\n    else if((Temp > 2.9) & (Temp < 5.9))\n    {\n        Temp = \"Moderate\";\n        Color = \"yellor\";\n    }\n    else if((Temp > 5.9) & (Temp < 7.9))\n    {\n        Temp = \"High\";\n        Color = \"orange\";\n    }\n    else if((Temp > 7.9) & (Temp < 10.9))\n    {\n        Temp = \"Very high\";\n        Color = \"red\";\n    }\n    else\n    {\n        Temp = \"Extreme\";\n        Color = \"violet\";        \n    }\n}\n\n// Set the message\nmsg = {\n    topic : Topics[Counter],\n    payload : Temp,\n    color : Color\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 970,
+        "y": 360,
+        "wires": [
+            [
+                "3bec830a.93565c"
+            ]
+        ]
+    },
+    {
+        "id": "3bec830a.93565c",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 5,
+        "width": "2",
+        "height": "2",
+        "name": "HumidityCloudinessUVLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1240,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "814d779f.ef3128",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "IncreaseHumCloudUVCounter",
+        "func": "var Temp = flow.get(\"HumCloudUVCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 2)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"HumCloudUVCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 470,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5f620be.c91c9",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SetImage",
+        "func": "var Data = flow.get(\"Data\").weather[0].icon;\nvar DayTime = \"\";\nvar WeatherImage;\n\n// Set the day time\nif(Data.includes(\"n\"))\n{\n    DayTime = \"nt_\";\n    Data = Data.replace(\"n\", \"\")\n}\nelse\n{\n    Data = Data.replace(\"d\", \"\")\n}\n\n// Get the image for the current weather\nswitch(Data)\n{\n    case(\"01\"):\n    {\n        WeatherImage = \"clear\";\n        break;\n    }\n    case(\"02\"):\n    {\n        WeatherImage = \"mostlysunny\";\n        break;\n    }\n    case(\"03\"):\n    {\n        WeatherImage = \"cloudy\";\n        break;\n    }\n    case(\"04\"):\n    {\n        WeatherImage = \"mostlycloudy\";\n        break;\n    }\n    case(\"09\"):\n    {\n        WeatherImage = \"sleet\";\n        break;\n    }\n    case(\"10\"):\n    {\n        WeatherImage = \"rain\";\n        break;\n    }\n    case(\"11\"):\n    {\n        WeatherImage = \"tstorms\";\n        break;\n    }\n    case(\"13\"):\n    {\n        WeatherImage = \"snow\";\n        break;\n    }\n    case(\"50\"):\n    {\n        WeatherImage = \"fog\";\n        break;\n    }\n}\n\n// Set the message\nmsg = {\n    payload : \"/Icons/\" + DayTime + WeatherImage + \".svg\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 160,
+        "wires": [
+            [
+                "e0794a4f.1d1eb8"
+            ]
+        ]
+    },
+    {
+        "id": "6b83061f.0543a8",
+        "type": "ui_text",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "name": "DetailedWeather",
+        "label": "Description",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1210,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3fd48b64.040134",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SetDetailWeather",
+        "func": "switch(flow.get(\"Data\").weather[0].id)\n{\n    case(200):\n    {\n        msg.payload = \"Thunderstorm with light rain\";\n        break;\n    }\n    case(201):\n    {\n        msg.payload = \"Thunderstorm with rain\";\n        break;\n    }\n    case(202):\n    {\n        msg.payload = \"Thunderstorm with heavy rain\";\n        break;\n    }\n    case(210):\n    {\n        msg.payload = \"Light thunderstorm\";\n        break;\n    }\n    case(211):\n    {\n        msg.payload = \"Thunderstorm\";\n        break;\n    }\n    case(212):\n    {\n        msg.payload = \"Heavy thunderstorm\";\n        break;\n    }\n    case(221):\n    {\n        msg.payload = \"Ragged thunderstorm\";\n        break;\n    }\n    case(230):\n    {\n        msg.payload = \"Thunderstorm with light drizzle\";\n        break;\n    }\n    case(231):\n    {\n        msg.payload = \"Thunderstorm with drizzle\";\n        break;\n    }\n    case(232):\n    {\n        msg.payload = \"Thunderstorm with heavy drizzle\";\n        break;\n    }\n    case(300):\n    {\n        msg.payload = \"Light intensity drizzle\";\n        break;\n    }\n    case(301):\n    {\n        msg.payload = \"Drizzle\";\n        break;\n    }\n    case(302):\n    {\n        msg.payload = \"Heavy intensity drizzle\";\n        break;\n    }\n    case(310):\n    {\n        msg.payload = \"Light intensity drizzle rain\";\n        break;\n    }\n    case(311):\n    {\n        msg.payload = \"Drizzle rain\";\n        break;\n    }\n    case(312):\n    {\n        msg.payload = \"Heavy intensity drizzle rain\";\n        break;\n    }\n    case(313):\n    {\n        msg.payload = \"Shower rain and drizzle\";\n        break;\n    }\n    case(314):\n    {\n        msg.payload = \"Heavy shower rain and drizzle\";\n        break;\n    }\n    case(321):\n    {\n        msg.payload = \"Shower drizzle\";\n        break;\n    }\n    case(500):\n    {\n        msg.payload = \"Light rain\";\n        break;\n    }\n    case(501):\n    {\n        msg.payload = \"Moderate rain\";\n        break;\n    }\n    case(502):\n    {\n        msg.payload = \"Heavy intensity rain\";\n        break;\n    }\n    case(503):\n    {\n        msg.payload = \"Very heavy rain\";\n        break;\n    }\n    case(504):\n    {\n        msg.payload = \"Extreme rain\";\n        break;\n    }\n    case(511):\n    {\n        msg.payload = \"Freezing rain\";\n        break;\n    }\n    case(520):\n    {\n        msg.payload = \"Light intensity shower rain\";\n        break;\n    }\n    case(521):\n    {\n        msg.payload = \"Shower rain\";\n        break;\n    }\n    case(522):\n    {\n        msg.payload = \"Heavy intensity shower rain\";\n        break;\n    }\n    case(531):\n    {\n        msg.payload = \"Ragged shower rain\";\n        break;\n    }\n    case(600):\n    {\n        msg.payload = \"Light snow\";\n        break;\n    }\n    case(601):\n    {\n        msg.payload = \"Snow\";\n        break;\n    }\n    case(602):\n    {\n        msg.payload = \"Heavy snow\";\n        break;\n    }\n    case(611):\n    {\n        msg.payload = \"Sleet\";\n        break;\n    }\n    case(612):\n    {\n        msg.payload = \"Shower sleet\";\n        break;\n    }\n    case(615):\n    {\n        msg.payload = \"Light rain and snow\";\n        break;\n    }\n    case(616):\n    {\n        msg.payload = \"Rain and snow\";\n        break;\n    }\n    case(620):\n    {\n        msg.payload = \"Light shower snow\";\n        break;\n    }\n    case(621):\n    {\n        msg.payload = \"Shower snow\";\n        break;\n    }\n    case(622):\n    {\n        msg.payload = \"Heavy shower snow\";\n        break;\n    }\n    case(701):\n    {\n        msg.payload = \"Mist\";\n        break;\n    }\n    case(711):\n    {\n        msg.payload = \"Smoke\";\n        break;\n    }\n    case(721):\n    {\n        msg.payload = \"Haze\";\n        break;\n    }\n    case(731):\n    {\n        msg.payload = \"Sand, dust whirls\";\n        break;\n    }\n    case(741):\n    {\n        msg.payload = \"Fog\";\n        break;\n    }\n    case(751):\n    {\n        msg.payload = \"Sand\";\n        break;\n    }\n    case(761):\n    {\n        msg.payload = \"Dust\";\n        break;\n    }\n    case(762):\n    {\n        msg.payload = \"Volcanic ash\";\n        break;\n    }\n    case(771):\n    {\n        msg.payload = \"Squalls\";\n        break;\n    }\n    case(781):\n    {\n        msg.payload = \"Tornado\";\n        break;\n    }\n    case(800):\n    {\n        msg.payload = \"Clear sky\";\n        break;\n    }\n    case(801):\n    {\n        msg.payload = \"Few clouds\";\n        break;\n    }\n    case(802):\n    {\n        msg.payload = \"Scattered clouds\";\n        break;\n    }\n    case(803):\n    {\n        msg.payload = \"Broken clouds\";\n        break;\n    }\n    case(804):\n    {\n        msg.payload = \"Overcast clouds\";\n        break;\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 930,
+        "y": 400,
+        "wires": [
+            [
+                "6b83061f.0543a8"
+            ]
+        ]
+    },
+    {
+        "id": "b00ca9c9.061078",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SetWindAngle",
+        "func": "var WindAngle = 0;\nif(typeof flow.get(\"Data\").wind.deg != \"undefined\")\n{\n    WindAngle = flow.get(\"Data\").wind.deg;\n}\n\nmsg = {\n    angle : WindAngle + \"deg\",\n    payload : \"/Icons/arrow-up-8-64.ico\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 440,
+        "wires": [
+            [
+                "f195f2cd.2c8cc"
+            ]
+        ]
+    },
+    {
+        "id": "e70c0ed1.c1cb6",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "SetWindSpeed",
+        "func": "msg = \n{\n    payload : flow.get(\"Data\").wind.speed\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 480,
+        "wires": [
+            [
+                "6b7b534e.de22ac"
+            ]
+        ]
+    },
+    {
+        "id": "6cc34078.1ad66",
+        "type": "inject",
+        "z": "c7135cb1.d9088",
+        "name": "InitCounter",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 130,
+        "y": 580,
+        "wires": [
+            [
+                "c404529f.d2af3"
+            ]
+        ]
+    },
+    {
+        "id": "c404529f.d2af3",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "Init",
+        "func": "flow.set(\"TempCounter\", 0);\nflow.set(\"PresCounter\", 0);\nflow.set(\"RiseSetCounter\", 0);\nflow.set(\"LocCounter\", 0);\nflow.set(\"HumCloudUVCounter\", 0);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 580,
+        "wires": [
+            [
+                "303b758.86e018a"
+            ]
+        ]
+    },
+    {
+        "id": "303b758.86e018a",
+        "type": "link out",
+        "z": "c7135cb1.d9088",
+        "name": "InitCurrentWeather",
+        "links": [],
+        "x": 355,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e0794a4f.1d1eb8",
+        "type": "ui_template",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "name": "WeatherImage",
+        "order": 2,
+        "width": "2",
+        "height": "4",
+        "format": "<!DOCTYPE html>\n<body>\n    <div class=\"center\">\n         <img ng-src=\"{{msg.payload}}\" width=\"160\" height=\"160\">\n    </div>\n</body>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 1200,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78627f36.b984d",
+        "type": "inject",
+        "z": "de180629.f440b8",
+        "name": "Refresh",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "0.1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 100,
+        "y": 800,
+        "wires": [
+            [
+                "643893f8.e39c8c"
+            ]
+        ]
+    },
+    {
+        "id": "643893f8.e39c8c",
+        "type": "link out",
+        "z": "de180629.f440b8",
+        "name": "Refresh",
+        "links": [
+            "e0f13dd5.dc42a",
+            "dcb5745d.2514e8",
+            "46b2333.a274bcc"
+        ],
+        "x": 515,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "836e573e.e5fd28",
+        "type": "ui_button",
+        "z": "de180629.f440b8",
+        "name": "ClearDatabaseButton",
+        "group": "51edf494.79fa9c",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Clear Database",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Clear",
+        "payloadType": "str",
+        "topic": "",
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "7a5d839f.c408ac"
+            ]
+        ]
+    },
+    {
+        "id": "2c113197.62fc7e",
+        "type": "ui_button",
+        "z": "de180629.f440b8",
+        "name": "ClearHistoryButton",
+        "group": "51edf494.79fa9c",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Clear History",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "fe67f813.3bbcf8"
+            ]
+        ]
+    },
+    {
+        "id": "38dee330.0ac57c",
+        "type": "ui_switch",
+        "z": "de180629.f440b8",
+        "name": "EnableDebugSwitch",
+        "label": "Enable debug",
+        "group": "cd45fc22.22276",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 340,
+        "y": 740,
+        "wires": [
+            [
+                "ab458be1.b9d918"
+            ]
+        ]
+    },
+    {
+        "id": "38d32459.0125ec",
+        "type": "exec",
+        "z": "de180629.f440b8",
+        "command": "sudo reboot",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "RebootSystem",
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "527652a5.a4b55c",
+        "type": "exec",
+        "z": "de180629.f440b8",
+        "command": "sudo shutdown -h now",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "ShutdownSystem",
+        "x": 370,
+        "y": 620,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6a7a4e02.53a12",
+        "type": "ui_button",
+        "z": "de180629.f440b8",
+        "name": "RebootButton",
+        "group": "51edf494.79fa9c",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Reboot ",
+        "color": "",
+        "bgcolor": "",
+        "icon": "loop",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 120,
+        "y": 560,
+        "wires": [
+            [
+                "38d32459.0125ec"
+            ]
+        ]
+    },
+    {
+        "id": "8e08bf6c.7b76e",
+        "type": "ui_button",
+        "z": "de180629.f440b8",
+        "name": "ShutdownButton",
+        "group": "51edf494.79fa9c",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Shutdown",
+        "color": "",
+        "bgcolor": "",
+        "icon": "power_settings_new",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 120,
+        "y": 620,
+        "wires": [
+            [
+                "527652a5.a4b55c"
+            ]
+        ]
+    },
+    {
+        "id": "9e2e1d2e.a1373",
+        "type": "json",
+        "z": "efaa1475.d638b8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "181bf251.4d72ce"
+            ]
+        ]
+    },
+    {
+        "id": "69a1faaa.aa4e24",
+        "type": "http request",
+        "z": "efaa1475.d638b8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 410,
+        "y": 40,
+        "wires": [
+            [
+                "9e2e1d2e.a1373"
+            ]
+        ]
+    },
+    {
+        "id": "1cd1ffd7.9ff51",
+        "type": "debug",
+        "z": "efaa1475.d638b8",
+        "name": "ForecastWeather",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 130,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d5f46b41.32b498",
+        "type": "change",
+        "z": "efaa1475.d638b8",
+        "name": "SetURL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "http://api.openweathermap.org/data/2.5/forecast?q={CITY}&APPID={APPID}",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{APPID}",
+                "fromt": "str",
+                "to": "Config.APIKey",
+                "tot": "global"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{CITY}",
+                "fromt": "str",
+                "to": "Config.City",
+                "tot": "global"
+            },
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 40,
+        "wires": [
+            [
+                "69a1faaa.aa4e24"
+            ]
+        ]
+    },
+    {
+        "id": "e5dd465a.0b8f88",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "GetForecastData",
+        "func": "var Data = [];\n\n// Get five datapoints of the forecast\n// NOTE: Use the datapoints for current time - 3h, because\n// the forecast hasen´t a fifth datapoint for the current time\n// at the fifth day\nfor(i = 0; i < 5; i++) \n{ \n    Data[i] = msg.payload.list[i * 8 + 7];\n}\n\nflow.set(\"Data\", Data)\n\nmsg = {\n    lon : msg.payload.city.coord.lon,\n    lat : msg.payload.city.coord.lat\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "8c3876df.35a8f8"
+            ]
+        ]
+    },
+    {
+        "id": "181bf251.4d72ce",
+        "type": "switch",
+        "z": "efaa1475.d638b8",
+        "name": "ErrorHandling",
+        "property": "payload.cod",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "e5dd465a.0b8f88",
+                "1cd1ffd7.9ff51",
+                "b9bac930.0e0948"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b60efe97.da59f",
+        "type": "inject",
+        "z": "efaa1475.d638b8",
+        "name": "ReloadData",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "86400",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "d5f46b41.32b498"
+            ]
+        ]
+    },
+    {
+        "id": "237fcf1b.b1aa2",
+        "type": "ui_button",
+        "z": "efaa1475.d638b8",
+        "name": "NexButton",
+        "group": "3b750bcb.26c254",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "navigate_next",
+        "payload": "Next",
+        "payloadType": "str",
+        "topic": "",
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "270510d8.56f36"
+            ]
+        ]
+    },
+    {
+        "id": "1e1eed17.c10d63",
+        "type": "ui_button",
+        "z": "efaa1475.d638b8",
+        "name": "PreviousButton",
+        "group": "3b750bcb.26c254",
+        "order": 1,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "navigate_before",
+        "payload": "Previous",
+        "payloadType": "str",
+        "topic": "",
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "270510d8.56f36"
+            ]
+        ]
+    },
+    {
+        "id": "bb020d0d.0b615",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 9,
+        "width": "2",
+        "height": "2",
+        "name": "SnowRainLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1220,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b6947a27.5afcb8",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 8,
+        "width": "2",
+        "height": "2",
+        "name": "HumidityCloudinessUVLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1260,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "752174f1.f8e8fc",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 7,
+        "width": "2",
+        "height": "2",
+        "name": "WindSpeedLabel",
+        "label": "Wind speed",
+        "format": "{{msg.payload}} m/s",
+        "layout": "col-center",
+        "x": 1230,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e4b0c84e.269de8",
+        "type": "ui_template",
+        "z": "de180629.f440b8",
+        "group": "",
+        "name": "ClockTitlebar",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<script id=\"clockScript1\" type=\"text/javascript\">\n    var ClockInterval;\n    var Options = { \n        year: 'numeric', \n        month : '2-digit', \n        day : '2-digit',\n        hour : '2-digit',\n        minute : '2-digit',\n        second : '2-digit'\n    };\n\n    $(function () \n    {\n        if(ClockInterval)\n        {\n            return;\n        }\n\n        //add clock\n        var div2 = $('<div/>');\n        var p = $('<p/>');\n\n        div2.append(p);\n        div2[0].style.marginLeft = 'auto';\n\n        function displayTime() \n        {\n            p.text(new Date().toLocaleString(navigator.languages[0], Options));\n        }\n        \n        ClockInterval = setInterval(displayTime, 1000);\n\n        var addToToolbarTimer;\n        \n        function addToToolbar() \n        {\n            var toolbar = $(\".md-toolbar-tools\");\n            \n            if(!toolbar.length) \n            {\n                return;\n            }\n            \n            toolbar.append(div2);\n            clearInterval(addToToolbarTimer);\n        }\n        addToToolbarTimer = setInterval(addToToolbar, 100);\n    });\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "global",
+        "x": 1310,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5955c88.33bc2",
+        "type": "switch",
+        "z": "b26426f0.8849e8",
+        "name": "LogCurrentWeather",
+        "property": "Debug",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "a4e20871.cb0fb8"
+            ]
+        ]
+    },
+    {
+        "id": "31c23002.9db69",
+        "type": "switch",
+        "z": "b26426f0.8849e8",
+        "name": "LogForecastWeather",
+        "property": "Debug",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "8abb3460.36ad48"
+            ]
+        ]
+    },
+    {
+        "id": "27036787.81eee8",
+        "type": "file",
+        "z": "b26426f0.8849e8",
+        "name": "WriteCurrentWeather",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 780,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7cf44ed4.ed302",
+        "type": "file",
+        "z": "b26426f0.8849e8",
+        "name": "WriteForecastWeather",
+        "filename": "",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 780,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab458be1.b9d918",
+        "type": "function",
+        "z": "de180629.f440b8",
+        "name": "SetDebug",
+        "func": "global.set(\"Debug\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5db9f314.b301ac",
+        "type": "link in",
+        "z": "b26426f0.8849e8",
+        "name": "CurrentWeatherData",
+        "links": [
+            "c94dfb94.f38108"
+        ],
+        "x": 195,
+        "y": 60,
+        "wires": [
+            [
+                "d5955c88.33bc2"
+            ]
+        ]
+    },
+    {
+        "id": "c8f2487c.53a578",
+        "type": "link in",
+        "z": "b26426f0.8849e8",
+        "name": "ForecastWeatherData",
+        "links": [
+            "b9bac930.0e0948"
+        ],
+        "x": 195,
+        "y": 120,
+        "wires": [
+            [
+                "31c23002.9db69"
+            ]
+        ]
+    },
+    {
+        "id": "de99132.36d7ff",
+        "type": "inject",
+        "z": "de180629.f440b8",
+        "name": "DisableDebug",
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 740,
+        "wires": [
+            [
+                "38dee330.0ac57c"
+            ]
+        ]
+    },
+    {
+        "id": "df4f5234.ca849",
+        "type": "sqlite",
+        "z": "b26426f0.8849e8",
+        "mydb": "7c7db363.4f26fc",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "WeatherData",
+        "x": 790,
+        "y": 240,
+        "wires": [
+            [
+                "b814dfd4.bf98b"
+            ]
+        ]
+    },
+    {
+        "id": "70ca5145.692bf",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 3,
+        "width": "2",
+        "height": "2",
+        "name": "TemperatureLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload - 273 | number:2}}° C",
+        "layout": "col-center",
+        "x": 1230,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "58d267ef.559418",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "name": "PressureLabel",
+        "label": "{{msg.topic}}",
+        "format": "{{msg.payload}} hpa",
+        "layout": "col-center",
+        "x": 1220,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "366b8a3d.b0e586",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "name": "TimeLabel",
+        "label": "",
+        "format": "{{msg.payload}} ",
+        "layout": "col-center",
+        "x": 1210,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d4390c8.e750ef",
+        "type": "ui_template",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "name": "WindDirectionLabel",
+        "order": 6,
+        "width": "1",
+        "height": "2",
+        "format": "<!DOCTYPE html>\n<style>\n    .rotateimg\n    {\n        -webkit-transform:rotate({{msg.angle}});\n        -moz-transform: rotate({{msg.angle}});\n        -ms-transform: rotate({{msg.angle}});\n        -o-transform: rotate({{msg.angle}});\n        transform: rotate({{msg.angle}});\n    }\n    .center\n    {\n        margin: auto;\n        display: block;\n    }\n</style>\n\n<body>\n    <div class=\"center\">\n        <img ng-src=\"{{msg.payload}}\" class=\"rotateimg\" width=\"64\" height=\"64\">\n    </div>\n</body>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 1230,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6d5a4cad.773d34",
+        "type": "ui_template",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "name": "WeatherImage",
+        "order": 2,
+        "width": "1",
+        "height": "2",
+        "format": "<!DOCTYPE html>\n<body>\n    <div class=\"center\">\n         <img ng-src=\"{{msg.payload}}\" width=\"64\" height=\"64\">\n    </div>\n</body>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "local",
+        "x": 1220,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0ad3b41.a90138",
+        "type": "ui_text",
+        "z": "efaa1475.d638b8",
+        "group": "b76347b4.e820b8",
+        "order": 5,
+        "width": "2",
+        "height": "2",
+        "name": "DetailedWeather",
+        "label": "Description",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1230,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3298d33f.ad4b5c",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SwitchSnowRain",
+        "func": "var Temp = 0;\nvar Topic = 0;\nvar Index = flow.get(\"DataIndex\");\nvar Counter = flow.get(\"SnowRainCounter\");\nvar Data = flow.get(\"Data\")[Index]; \n\n// Switch if snow object exist\nif(Counter === 0)\n{\n    Topic = \"Snow\";\n    if(Data.snow.length > 0)\n    {\n        Temp = Data.snow[0] + \" mm\";\n    }\n    else\n    {\n        Temp = \"No snow...sad...\";\n    }\n}\nelse\n{   \n    Topic = \"Rain\"\n    if(Data.rain.length > 0)\n    {\n        Temp = Data.rain[0] + \" mm\";\n    }\n    else\n    {\n        Temp = \"Enjoy a rain-free day!\";\n    }\n}\n\n// Set the message\nmsg = {\n    topic : Topic,\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 950,
+        "y": 340,
+        "wires": [
+            [
+                "bb020d0d.0b615"
+            ]
+        ]
+    },
+    {
+        "id": "dcb5745d.2514e8",
+        "type": "link in",
+        "z": "efaa1475.d638b8",
+        "name": "Refresh",
+        "links": [
+            "643893f8.e39c8c"
+        ],
+        "x": 795,
+        "y": 420,
+        "wires": [
+            [
+                "3298d33f.ad4b5c",
+                "5f823964.005008",
+                "1c9ab06.fb85b5",
+                "65191677.403d48",
+                "889ae1d9.0c42d",
+                "1ba08bed.2a74b4",
+                "22a23d64.0d9b52",
+                "bc5b866.825f078",
+                "d38647f5.f02638"
+            ]
+        ]
+    },
+    {
+        "id": "5f823964.005008",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SwitchTemperature",
+        "func": "var Temp = 0;\nvar Index = flow.get(\"DataIndex\");\nvar Counter = flow.get(\"TempCounter\");\nvar Topics = \n[\n    \"Temperature\",\n    \"Max. Temperature\",\n    \"Min. Temperature\"\n];\n\nif(Counter === 0)\n{\n    Temp = flow.get(\"Data\")[Index].main.temp;\n}\nelse if(Counter == 1)\n{\n    Temp = flow.get(\"Data\")[Index].main.temp_max;\n}\nelse\n{\n    Temp = flow.get(\"Data\")[Index].main.temp_min;\n}\n\n// Set the message\nmsg = {\n    topic : Topics[Counter],\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 950,
+        "y": 380,
+        "wires": [
+            [
+                "70ca5145.692bf"
+            ]
+        ]
+    },
+    {
+        "id": "1c9ab06.fb85b5",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SwitchPressure",
+        "func": "var Index = flow.get(\"DataIndex\");\nvar Data = flow.get(\"Data\")[Index].main;\nvar Counter = flow.get(\"PresCounter\");\n\n// Switch if sea level object exist\nif(typeof Data.sea_level != \"undefined\") \n{\n    if(Counter === 0)\n    {\n        Topic =  \"Pressure (Ground)\";\n        Temp = Data.grnd_level;\n    }\n    else\n    {\n        Topic = \"Pressure (Sea)\";\n        Temp = Data.sea_level ;\n    }\n}\nelse\n{\n    Topic = \"Pressure\"\n    Temp = Data.pressure;\n}\n\n// Set the message\nmsg = {\n    topic : Topic,\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 420,
+        "wires": [
+            [
+                "58d267ef.559418"
+            ]
+        ]
+    },
+    {
+        "id": "65191677.403d48",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SetTime",
+        "func": "var Counter = flow.get(\"DataIndex\");\nvar NewDate = flow.get(\"Data\")[Counter].dt;\n\n// Set the message\nmsg = {\n    payload : new Date(NewDate * 1000).toString()\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 300,
+        "wires": [
+            [
+                "366b8a3d.b0e586"
+            ]
+        ]
+    },
+    {
+        "id": "889ae1d9.0c42d",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SwitchHumidityCloudinessUV",
+        "func": "var Temp = 0;\nvar Index = flow.get(\"DataIndex\");\nvar Counter = flow.get(\"HumCloudUVCounter\");\nvar Topics = \n[\n    \"Humidity\",\n    \"Cloudiness\",\n    \"UV\"\n];\n\nif(Counter === 0)\n{\n    Temp = flow.get(\"Data\")[Index].main.humidity + \"%\";\n}\nelse if(Counter === 1)\n{\n    Temp = flow.get(\"Data\")[Index].clouds.all + \"%\";\n}\nelse\n{\n    Temp = flow.get(\"UV\")[Index].value;\n    if(Temp <=  2.9)\n    {\n        Temp = \"Low\";\n        Color = \"green\";\n    }\n    else if((Temp > 2.9) & (Temp < 5.9))\n    {\n        Temp = \"Moderate\";\n        Color = \"yellor\";\n    }\n    else if((Temp > 5.9) & (Temp < 7.9))\n    {\n        Temp = \"High\";\n        Color = \"orange\";\n    }\n    else if((Temp > 7.9) & (Temp < 10.9))\n    {\n        Temp = \"Very high\";\n        Color = \"red\";\n    }\n    else\n    {\n        Temp = \"Extreme\";\n        Color = \"violet\";        \n    }\n}\n\n// Set the message\nmsg = {\n    topic : Topics[Counter],\n    payload : Temp\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 990,
+        "y": 460,
+        "wires": [
+            [
+                "b6947a27.5afcb8"
+            ]
+        ]
+    },
+    {
+        "id": "1ba08bed.2a74b4",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SetImage",
+        "func": "var Data = flow.get(\"Data\")[flow.get(\"DataIndex\")].weather[0].icon;\nvar DayTime = \"\";\nvar WeatherImage;\n\n// Set the day time\nif(Data.includes(\"n\"))\n{\n    DayTime = \"nt_\";\n    Data = Data.replace(\"n\", \"\")\n}\nelse\n{\n    Data = Data.replace(\"d\", \"\")\n}\n\n// Get the image for the current weather\nswitch(Data)\n{\n    case(\"01\"):\n    {\n        WeatherImage = \"clear\";\n        break;\n    }\n    case(\"02\"):\n    {\n        WeatherImage = \"mostlysunny\";\n        break;\n    }\n    case(\"03\"):\n    {\n        WeatherImage = \"cloudy\";\n        break;\n    }\n    case(\"04\"):\n    {\n        WeatherImage = \"mostlycloudy\";\n        break;\n    }\n    case(\"09\"):\n    {\n        WeatherImage = \"sleet\";\n        break;\n    }\n    case(\"10\"):\n    {\n        WeatherImage = \"rain\";\n        break;\n    }\n    case(\"11\"):\n    {\n        WeatherImage = \"tstorms\";\n        break;\n    }\n    case(\"13\"):\n    {\n        WeatherImage = \"snow\";\n        break;\n    }\n    case(\"50\"):\n    {\n        WeatherImage = \"fog\";\n        break;\n    }\n}\n\n// Set the message\nmsg = {\n    payload : \"/Icons/\" + DayTime + WeatherImage + \".svg\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "6d5a4cad.773d34"
+            ]
+        ]
+    },
+    {
+        "id": "22a23d64.0d9b52",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SetDetailWeather",
+        "func": "var Index = flow.get(\"DataIndex\");\nswitch(flow.get(\"Data\")[Index].weather[0].id)\n{\n    case(200):\n    {\n        msg.payload = \"Thunderstorm with light rain\";\n        break;\n    }\n    case(201):\n    {\n        msg.payload = \"Thunderstorm with rain\";\n        break;\n    }\n    case(202):\n    {\n        msg.payload = \"Thunderstorm with heavy rain\";\n        break;\n    }\n    case(210):\n    {\n        msg.payload = \"Light thunderstorm\";\n        break;\n    }\n    case(211):\n    {\n        msg.payload = \"Thunderstorm\";\n        break;\n    }\n    case(212):\n    {\n        msg.payload = \"Heavy thunderstorm\";\n        break;\n    }\n    case(221):\n    {\n        msg.payload = \"Ragged thunderstorm\";\n        break;\n    }\n    case(230):\n    {\n        msg.payload = \"Thunderstorm with light drizzle\";\n        break;\n    }\n    case(231):\n    {\n        msg.payload = \"Thunderstorm with drizzle\";\n        break;\n    }\n    case(232):\n    {\n        msg.payload = \"Thunderstorm with heavy drizzle\";\n        break;\n    }\n    case(300):\n    {\n        msg.payload = \"Light intensity drizzle\";\n        break;\n    }\n    case(301):\n    {\n        msg.payload = \"Drizzle\";\n        break;\n    }\n    case(302):\n    {\n        msg.payload = \"Heavy intensity drizzle\";\n        break;\n    }\n    case(310):\n    {\n        msg.payload = \"Light intensity drizzle rain\";\n        break;\n    }\n    case(311):\n    {\n        msg.payload = \"Drizzle rain\";\n        break;\n    }\n    case(312):\n    {\n        msg.payload = \"Heavy intensity drizzle rain\";\n        break;\n    }\n    case(313):\n    {\n        msg.payload = \"Shower rain and drizzle\";\n        break;\n    }\n    case(314):\n    {\n        msg.payload = \"Heavy shower rain and drizzle\";\n        break;\n    }\n    case(321):\n    {\n        msg.payload = \"Shower drizzle\";\n        break;\n    }\n    case(500):\n    {\n        msg.payload = \"Light rain\";\n        break;\n    }\n    case(501):\n    {\n        msg.payload = \"Moderate rain\";\n        break;\n    }\n    case(502):\n    {\n        msg.payload = \"Heavy intensity rain\";\n        break;\n    }\n    case(503):\n    {\n        msg.payload = \"Very heavy rain\";\n        break;\n    }\n    case(504):\n    {\n        msg.payload = \"Extreme rain\";\n        break;\n    }\n    case(511):\n    {\n        msg.payload = \"Freezing rain\";\n        break;\n    }\n    case(520):\n    {\n        msg.payload = \"Light intensity shower rain\";\n        break;\n    }\n    case(521):\n    {\n        msg.payload = \"Shower rain\";\n        break;\n    }\n    case(522):\n    {\n        msg.payload = \"Heavy intensity shower rain\";\n        break;\n    }\n    case(531):\n    {\n        msg.payload = \"Ragged shower rain\";\n        break;\n    }\n    case(600):\n    {\n        msg.payload = \"Light snow\";\n        break;\n    }\n    case(601):\n    {\n        msg.payload = \"Snow\";\n        break;\n    }\n    case(602):\n    {\n        msg.payload = \"Heavy snow\";\n        break;\n    }\n    case(611):\n    {\n        msg.payload = \"Sleet\";\n        break;\n    }\n    case(612):\n    {\n        msg.payload = \"Shower sleet\";\n        break;\n    }\n    case(615):\n    {\n        msg.payload = \"Light rain and snow\";\n        break;\n    }\n    case(616):\n    {\n        msg.payload = \"Rain and snow\";\n        break;\n    }\n    case(620):\n    {\n        msg.payload = \"Light shower snow\";\n        break;\n    }\n    case(621):\n    {\n        msg.payload = \"Shower snow\";\n        break;\n    }\n    case(622):\n    {\n        msg.payload = \"Heavy shower snow\";\n        break;\n    }\n    case(701):\n    {\n        msg.payload = \"Mist\";\n        break;\n    }\n    case(711):\n    {\n        msg.payload = \"Smoke\";\n        break;\n    }\n    case(721):\n    {\n        msg.payload = \"Haze\";\n        break;\n    }\n    case(731):\n    {\n        msg.payload = \"Sand, dust whirls\";\n        break;\n    }\n    case(741):\n    {\n        msg.payload = \"Fog\";\n        break;\n    }\n    case(751):\n    {\n        msg.payload = \"Sand\";\n        break;\n    }\n    case(761):\n    {\n        msg.payload = \"Dust\";\n        break;\n    }\n    case(762):\n    {\n        msg.payload = \"Volcanic ash\";\n        break;\n    }\n    case(771):\n    {\n        msg.payload = \"Squalls\";\n        break;\n    }\n    case(781):\n    {\n        msg.payload = \"Tornado\";\n        break;\n    }\n    case(800):\n    {\n        msg.payload = \"Clear sky\";\n        break;\n    }\n    case(801):\n    {\n        msg.payload = \"Few clouds\";\n        break;\n    }\n    case(802):\n    {\n        msg.payload = \"Scattered clouds\";\n        break;\n    }\n    case(803):\n    {\n        msg.payload = \"Broken clouds\";\n        break;\n    }\n    case(804):\n    {\n        msg.payload = \"Overcast clouds\";\n        break;\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 950,
+        "y": 500,
+        "wires": [
+            [
+                "c0ad3b41.a90138"
+            ]
+        ]
+    },
+    {
+        "id": "bc5b866.825f078",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SetWindAngle",
+        "func": "var WindAngle = 0;\nif(typeof flow.get(\"Data\")[flow.get(\"DataIndex\")].wind.deg != \"undefined\")\n{\n    WindAngle = flow.get(\"Data\")[flow.get(\"DataIndex\")].wind.deg;\n}\n\nmsg = {\n    angle : WindAngle + \"deg\",\n    payload : \"/Icons/arrow-up-8-64.ico\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 540,
+        "wires": [
+            [
+                "d4390c8.e750ef"
+            ]
+        ]
+    },
+    {
+        "id": "d38647f5.f02638",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "SetWindSpeed",
+        "func": "msg = \n{\n    payload : flow.get(\"Data\")[flow.get(\"DataIndex\")].wind.speed\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 580,
+        "wires": [
+            [
+                "752174f1.f8e8fc"
+            ]
+        ]
+    },
+    {
+        "id": "d9b6fe04.1124",
+        "type": "inject",
+        "z": "efaa1475.d638b8",
+        "name": "SwitchTimer",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 720,
+        "wires": [
+            [
+                "67326eda.9e719",
+                "18ca1d4d.84db73",
+                "6a82942b.8b2dec",
+                "4846a5e1.d1b56c",
+                "e8f3ce88.9efbc"
+            ]
+        ]
+    },
+    {
+        "id": "67326eda.9e719",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "IncreaseTempCounter",
+        "func": "var Temp = flow.get(\"TempCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 2)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"TempCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18ca1d4d.84db73",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "IncreasePresCounter",
+        "func": "var Temp = flow.get(\"PresCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 1)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"PresCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a82942b.8b2dec",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "IncreaseLocationCounter",
+        "func": "var Temp = flow.get(\"LocCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 1)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"LocCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4aec7e71.feafd",
+        "type": "inject",
+        "z": "efaa1475.d638b8",
+        "name": "InitCounter",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 110,
+        "y": 580,
+        "wires": [
+            [
+                "d6fc42.6f3573c"
+            ]
+        ]
+    },
+    {
+        "id": "d6fc42.6f3573c",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "Init",
+        "func": "flow.set(\"DataIndex\", 0);\nflow.set(\"TempCounter\", 0);\nflow.set(\"PresCounter\", 0);\nflow.set(\"RiseSetCounter\", 0);\nflow.set(\"LocCounter\", 0);\nflow.set(\"HumCloudUVCounter\", 0);\nflow.set(\"SnowRainCounter\", 0);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 580,
+        "wires": [
+            [
+                "b81cfbe4.949c98"
+            ]
+        ]
+    },
+    {
+        "id": "b81cfbe4.949c98",
+        "type": "link out",
+        "z": "efaa1475.d638b8",
+        "name": "InitForecastWeather",
+        "links": [
+            "92c7fa92.82d8a8"
+        ],
+        "x": 335,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4846a5e1.d1b56c",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "IncreaseHumCloudUVCounter",
+        "func": "var Temp = flow.get(\"HumCloudUVCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 2)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"HumCloudUVCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a901ed5.f9e1b",
+        "type": "ui_text",
+        "z": "12234f31.725061",
+        "group": "80826d65.baacb",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "name": "",
+        "label": "Version",
+        "format": "0.1",
+        "layout": "col-center",
+        "x": 1300,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5b5f0913.b857c8",
+        "type": "ui_text",
+        "z": "12234f31.725061",
+        "group": "eb724317.b6e2e",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "MyEMail",
+        "label": "E-Mail",
+        "format": "DanielKampert@kampis-elektroecke.de",
+        "layout": "col-center",
+        "x": 1300,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f4b0386b.09ee78",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "NextButtonLogic",
+        "func": "Enable = false;\nCounter = flow.get(\"DataIndex\");\n\nif((Counter >= 0) & (Counter < 4))\n{\n    Enable = true;\n}\n\nmsg = {\n    enabled : Enable\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 460,
+        "wires": [
+            [
+                "237fcf1b.b1aa2"
+            ]
+        ]
+    },
+    {
+        "id": "5155956.ef6a66c",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "PreviousButtonLogic",
+        "func": "Enable = false;\nCounter = flow.get(\"DataIndex\");\n\nif(Counter > 0)\n{\n    Enable = true;\n}\n\nmsg = {\n    enabled : Enable\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "1e1eed17.c10d63"
+            ]
+        ]
+    },
+    {
+        "id": "573a794d.e786c8",
+        "type": "inject",
+        "z": "b26426f0.8849e8",
+        "name": "CreateDatabase",
+        "topic": "CREATE TABLE Weather(ID INTEGER PRIMARY KEY AUTOINCREMENT, CurrentDate DATE, CurrentTime TIME, Temperature NUMERIC, MaxTemperature NUMERIC, MinTemperature NUMERIC, Pressure NUMERIC, Humidity NUMERIC, Cloudiness NUMERIC, WindSpeed NUMERIC, WindAngle NUMERIC, WeatherID NUMERIC)",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "df4f5234.ca849"
+            ]
+        ]
+    },
+    {
+        "id": "b814dfd4.bf98b",
+        "type": "debug",
+        "z": "b26426f0.8849e8",
+        "name": "DatabaseDebug",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 960,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b167f4bc.e0e338",
+        "type": "function",
+        "z": "b26426f0.8849e8",
+        "name": "GetDatabaseQuery",
+        "func": "var Query = 0;\n\nvar Temperature = msg.payload.main.temp - 273;\nvar MaxTemperature = msg.payload.main.temp_max - 273;\nvar MinTemperature = msg.payload.main.temp_min - 273;\nvar Pressure = msg.payload.main.pressure;\nvar Humidity = msg.payload.main.humidity;\nvar Cloudiness = msg.payload.clouds.all;\nvar WindSpeed = msg.payload.wind.speed;\n\nvar WindAngle = 0;\nif(typeof msg.payload.wind.deg != \"undefined\")\n{\n    WindAngle = msg.payload.wind.deg;\n}\n\nvar WeatherID = msg.payload.weather[0].id;\n\nif(msg.payload == \"Clear\")\n{\n    Query = \"DELETE FROM Weather\";\n}\nelse\n{\n    Query = \"INSERT INTO Weather(CurrentDate, CurrentTime, Temperature, MaxTemperature, MinTemperature, Pressure, Humidity, Cloudiness, WindSpeed, WindAngle, WeatherID) values(date('now'), time('now'), \" + \n    Temperature + \", \" + \n    MaxTemperature + \", \" + \n    MinTemperature + \", \" + \n    Pressure + \", \" + \n    Humidity + \", \" + \n    Cloudiness + \", \" + \n    WindSpeed + \", \" + \n    WindAngle + \", \" + \n    WeatherID + \n    \")\";\n}\n\nmsg = {\n    topic : Query\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "4ee9f41b.9693fc"
+            ]
+        ]
+    },
+    {
+        "id": "b0739d72.50f17",
+        "type": "link in",
+        "z": "b26426f0.8849e8",
+        "name": "CurrentWeatherData",
+        "links": [
+            "c94dfb94.f38108",
+            "edc9da37.f61618",
+            "10da68ae.e8bab7"
+        ],
+        "x": 175,
+        "y": 360,
+        "wires": [
+            [
+                "b167f4bc.e0e338"
+            ]
+        ]
+    },
+    {
+        "id": "fcc857fb.bbb4c8",
+        "type": "link in",
+        "z": "5bd259d5.4c3598",
+        "name": "CurrentWeatherData",
+        "links": [
+            "c94dfb94.f38108"
+        ],
+        "x": 175,
+        "y": 220,
+        "wires": [
+            [
+                "2359ec9b.1bb7a4",
+                "b6080f39.e3368",
+                "a19713d4.4feab"
+            ]
+        ]
+    },
+    {
+        "id": "270510d8.56f36",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "CountLogic",
+        "func": "// Get the old value\nCounter = flow.get(\"DataIndex\");\n\nif(msg.payload == \"Next\")\n{\n    Counter = Counter + 1;\n}\nelse if(msg.payload == \"Previous\")\n{\n    Counter = Counter - 1;\n}\n\n// Set the new value\nflow.set(\"DataIndex\", Counter);\n\nmsg = {\n    payload : Counter\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "f4b0386b.09ee78",
+                "5155956.ef6a66c"
+            ]
+        ]
+    },
+    {
+        "id": "92c7fa92.82d8a8",
+        "type": "link in",
+        "z": "efaa1475.d638b8",
+        "name": "InitForecastWeather",
+        "links": [
+            "b81cfbe4.949c98"
+        ],
+        "x": 75,
+        "y": 480,
+        "wires": [
+            [
+                "f4b0386b.09ee78",
+                "5155956.ef6a66c"
+            ]
+        ]
+    },
+    {
+        "id": "7a5d839f.c408ac",
+        "type": "link out",
+        "z": "de180629.f440b8",
+        "name": "ClearDatabase",
+        "links": [
+            "e6809ce.d5a116"
+        ],
+        "x": 315,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e6809ce.d5a116",
+        "type": "link in",
+        "z": "b26426f0.8849e8",
+        "name": "ClearDatabase",
+        "links": [
+            "7a5d839f.c408ac"
+        ],
+        "x": 175,
+        "y": 320,
+        "wires": [
+            [
+                "b167f4bc.e0e338"
+            ]
+        ]
+    },
+    {
+        "id": "785e1419.5eea8c",
+        "type": "ui_text",
+        "z": "12234f31.725061",
+        "group": "80826d65.baacb",
+        "order": 1,
+        "width": "5",
+        "height": "1",
+        "name": "Description",
+        "label": "",
+        "format": "Raspberrys Pi Weather Station",
+        "layout": "col-center",
+        "x": 1310,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "395db09f.9dcee",
+        "type": "ui_text",
+        "z": "12234f31.725061",
+        "group": "eb724317.b6e2e",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "MyGit",
+        "label": "GitLab",
+        "format": "https://gitlab.com/Kampi",
+        "layout": "col-center",
+        "x": 1290,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "70520263.32bacc",
+        "type": "ui_template",
+        "z": "41fb1ff7.804e7",
+        "group": "63a66c4d.1eb944",
+        "name": "Leaflet",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css\" />\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js\"></script>\n\n<script>\n    (function() \n    {\n        const cScope = this.scope;\n        setTimeout(function () \n        {\n        \tconst Map = L.map('mapid').setView([50.98, 7.14], 13);\n            \n            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', \n            {\n                attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\n            }).addTo(Map);\n            \n            // Add OpenWeatherMap layer\n            Map.addLayer(new L.TileLayer(\"http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=f1d4a0143d26d44f4d5f63c532dc0541\"));\n        }, 300);\n        \n        setTimeout(function () \n        {\n            Map.invalidateSize();\n        }, 100);\n    })();\n</script>\n\n<div id=\"mapid\" style=\"width: 100%; height: 300px;\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb695fe5.1229a",
+        "type": "link in",
+        "z": "41fb1ff7.804e7",
+        "name": "CurrentWeatherData",
+        "links": [
+            "c94dfb94.f38108",
+            "edc9da37.f61618",
+            "10da68ae.e8bab7"
+        ],
+        "x": 175,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ed1d16c.5700e",
+        "type": "ui_dropdown",
+        "z": "41fb1ff7.804e7",
+        "name": "SelectLayerDropdown",
+        "label": "",
+        "place": "",
+        "group": "dc4c2fe5.66c82",
+        "order": 0,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "options": [
+            {
+                "label": "Clouds",
+                "value": "clouds_new",
+                "type": "str"
+            },
+            {
+                "label": "Precipitation",
+                "value": "precipitation_new",
+                "type": "str"
+            },
+            {
+                "label": "Sea level pressure",
+                "value": "pressure_new",
+                "type": "str"
+            },
+            {
+                "label": "Wind speed",
+                "value": "wind_new",
+                "type": "str"
+            },
+            {
+                "label": "Temperature",
+                "value": "temp_new",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 340,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "740b8e94.dec62",
+        "type": "ui_dropdown",
+        "z": "41fb1ff7.804e7",
+        "name": "SelectZoomDropdown",
+        "label": "",
+        "place": "",
+        "group": "dc4c2fe5.66c82",
+        "order": 0,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "options": [
+            {
+                "label": "1x",
+                "value": "1",
+                "type": "str"
+            },
+            {
+                "label": "2x",
+                "value": "2",
+                "type": "str"
+            },
+            {
+                "label": "5x",
+                "value": "5",
+                "type": "str"
+            },
+            {
+                "label": "10x",
+                "value": "10",
+                "type": "str"
+            },
+            {
+                "label": "15x",
+                "value": "15",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 340,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e193eead.ce547",
+        "type": "inject",
+        "z": "41fb1ff7.804e7",
+        "name": "SetDefaultLayer",
+        "topic": "",
+        "payload": "clouds_new",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "7ed1d16c.5700e"
+            ]
+        ]
+    },
+    {
+        "id": "de2ab897.86f9f8",
+        "type": "inject",
+        "z": "41fb1ff7.804e7",
+        "name": "SetDefaultZoom",
+        "topic": "",
+        "payload": "15",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "740b8e94.dec62"
+            ]
+        ]
+    },
+    {
+        "id": "56b54cd2.c154b4",
+        "type": "ui_chart",
+        "z": "5bd259d5.4c3598",
+        "name": "TemperatureHistory",
+        "group": "387d6a4d.aeeca6",
+        "order": 0,
+        "width": "6",
+        "height": "7",
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff8040",
+            "#aec7e8",
+            "#ff0000",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 570,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7bec91f.3b3337",
+        "type": "ui_chart",
+        "z": "5bd259d5.4c3598",
+        "name": "HumidityHistory",
+        "group": "c630e481.c26278",
+        "order": 0,
+        "width": "6",
+        "height": "7",
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#0000ff",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "69f89a72.7c75d4",
+        "type": "ui_chart",
+        "z": "5bd259d5.4c3598",
+        "name": "PressureHistory",
+        "group": "8c4b552a.a17fe8",
+        "order": 0,
+        "width": "6",
+        "height": "7",
+        "label": "",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#008000",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 560,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2359ec9b.1bb7a4",
+        "type": "function",
+        "z": "5bd259d5.4c3598",
+        "name": "GetTemperatureData",
+        "func": "msg1 = {\n    visible : false,\n    topic : \"Temperature [° C]\",\n    payload : msg.payload.main.temp - 273\n}\n\nmsg2 = {\n    topic : \"Min. Temperature [° C]\",\n    payload : msg.payload.main.temp_min - 273\n}\n\nmsg3 = {\n    topic : \"Max. Temperature [° C]\",\n    payload : msg.payload.main.temp_max - 273\n}\n\nreturn [msg1, msg2, msg3];",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "56b54cd2.c154b4"
+            ],
+            [
+                "56b54cd2.c154b4"
+            ],
+            [
+                "56b54cd2.c154b4"
+            ]
+        ]
+    },
+    {
+        "id": "d4a37d3c.2fb99",
+        "type": "link in",
+        "z": "5bd259d5.4c3598",
+        "name": "ClearHistory",
+        "links": [
+            "fe67f813.3bbcf8"
+        ],
+        "x": 175,
+        "y": 100,
+        "wires": [
+            [
+                "56b54cd2.c154b4",
+                "7bec91f.3b3337",
+                "69f89a72.7c75d4"
+            ]
+        ]
+    },
+    {
+        "id": "fe67f813.3bbcf8",
+        "type": "link out",
+        "z": "de180629.f440b8",
+        "name": "ClearHistory",
+        "links": [
+            "d4a37d3c.2fb99"
+        ],
+        "x": 315,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b6080f39.e3368",
+        "type": "function",
+        "z": "5bd259d5.4c3598",
+        "name": "GetHumidityData",
+        "func": "msg = {\n    topic : \"Humidity [%]\",\n    payload : msg.payload.main.humidity\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "7bec91f.3b3337"
+            ]
+        ]
+    },
+    {
+        "id": "a19713d4.4feab",
+        "type": "function",
+        "z": "5bd259d5.4c3598",
+        "name": "GetPressureData",
+        "func": "msg = {\n    topic : \"Pressure [hpa]\",\n    payload : msg.payload.main.pressure\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "69f89a72.7c75d4"
+            ]
+        ]
+    },
+    {
+        "id": "c89b29be.3fe238",
+        "type": "inject",
+        "z": "de180629.f440b8",
+        "name": "ClearHistory",
+        "topic": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "fe67f813.3bbcf8"
+            ]
+        ]
+    },
+    {
+        "id": "8d5023c9.2b0a",
+        "type": "ui_dropdown",
+        "z": "5bd259d5.4c3598",
+        "name": "SelectHistoryDropdown",
+        "label": "",
+        "place": "",
+        "group": "afdd9168.9f64b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Temperature",
+                "value": "Temperature",
+                "type": "str"
+            },
+            {
+                "label": "Humidity",
+                "value": "Humidity",
+                "type": "str"
+            },
+            {
+                "label": "Pressure",
+                "value": "Pressure",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 390,
+        "y": 40,
+        "wires": [
+            [
+                "be61b79a.a31ba8"
+            ]
+        ]
+    },
+    {
+        "id": "fe011377.96767",
+        "type": "inject",
+        "z": "5bd259d5.4c3598",
+        "name": "SelectDefaultHistory",
+        "topic": "",
+        "payload": "Temperature",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "x": 160,
+        "y": 40,
+        "wires": [
+            [
+                "8d5023c9.2b0a"
+            ]
+        ]
+    },
+    {
+        "id": "be61b79a.a31ba8",
+        "type": "function",
+        "z": "5bd259d5.4c3598",
+        "name": "HideCharts ",
+        "func": "var Query = 0;\n\nif(msg.payload == \"Temperature\")\n{\n    Query = \n        {\n        \"group\":\n            {\n                \"hide\" : [\"Today`s_History_Humidity\", \"Today`s_History_Pressure\"],\n                \"show\" : [\"Today`s_History_Temperature\"]\n            }\n        }\n}\nelse if(msg.payload == \"Humidity\")\n{\n    Query = \n        {\n        \"group\":\n            {\n                \"hide\" : [\"Today`s_History_Temperature\", \"Today`s_History_Pressure\"],\n                \"show\" : [\"Today`s_History_Humidity\"]\n            }\n        }  \n}\nelse\n{\n    Query = \n        {\n        \"group\":\n            {\n                \"hide\" : [\"Today`s_History_Temperature\", \"Today`s_History_Humidity\"],\n                \"show\" : [\"Today`s_History_Pressure\"]\n            }\n        }    \n}\n\nmsg = {\n    payload : Query\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 40,
+        "wires": [
+            [
+                "bfe40bff.493a08"
+            ]
+        ]
+    },
+    {
+        "id": "bfe40bff.493a08",
+        "type": "ui_ui_control",
+        "z": "5bd259d5.4c3598",
+        "name": "ChartControl",
+        "x": 750,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c01ee5b.dca3b2",
+        "type": "inject",
+        "z": "de180629.f440b8",
+        "name": "Reboot",
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "38d32459.0125ec"
+            ]
+        ]
+    },
+    {
+        "id": "d73db3e.1f7ae5",
+        "type": "json",
+        "z": "c7135cb1.d9088",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "afb952c7.66c19",
+                "57949661.3876a8"
+            ]
+        ]
+    },
+    {
+        "id": "2801cc13.bfd1c4",
+        "type": "http request",
+        "z": "c7135cb1.d9088",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "d73db3e.1f7ae5"
+            ]
+        ]
+    },
+    {
+        "id": "e433c582.9f4c68",
+        "type": "change",
+        "z": "c7135cb1.d9088",
+        "name": "SetURL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "http://api.openweathermap.org/data/2.5/uvi?appid={APPID}&lat={LAT}&lon={LON}",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{APPID}",
+                "fromt": "str",
+                "to": "Config.APIKey",
+                "tot": "global"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{LAT}",
+                "fromt": "str",
+                "to": "lat",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{LON}",
+                "fromt": "str",
+                "to": "lon",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "2801cc13.bfd1c4"
+            ]
+        ]
+    },
+    {
+        "id": "afb952c7.66c19",
+        "type": "function",
+        "z": "c7135cb1.d9088",
+        "name": "GetUVData",
+        "func": "flow.set(\"UV\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2b44f52.9b47a",
+        "type": "json",
+        "z": "efaa1475.d638b8",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 550,
+        "y": 240,
+        "wires": [
+            [
+                "ebe4d6cc.74d7a8"
+            ]
+        ]
+    },
+    {
+        "id": "1ecb89a.c11aa76",
+        "type": "http request",
+        "z": "efaa1475.d638b8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "",
+        "tls": "",
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "e2b44f52.9b47a"
+            ]
+        ]
+    },
+    {
+        "id": "8c3876df.35a8f8",
+        "type": "change",
+        "z": "efaa1475.d638b8",
+        "name": "SetURL",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "http://api.openweathermap.org/data/2.5/uvi/forecast?appid={APPID}&lat={LAT}&lon={LON}",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{APPID}",
+                "fromt": "str",
+                "to": "APIKey",
+                "tot": "global"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{LAT}",
+                "fromt": "str",
+                "to": "lat",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "{LON}",
+                "fromt": "str",
+                "to": "lon",
+                "tot": "msg"
+            },
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "url",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "1ecb89a.c11aa76"
+            ]
+        ]
+    },
+    {
+        "id": "ebe4d6cc.74d7a8",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "GetUVData",
+        "func": "var Data = [];\n\n// Get five datapoints of the forecast\n// NOTE: Use the datapoints for current time - 3h, because\n// the forecast hasen´t a fifth datapoint for the current time\n// at the fifth day\nfor(i = 0; i < 5; i++) \n{ \n    Data[i] = msg.payload[i];\n}\n\nflow.set(\"UV\", Data);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57949661.3876a8",
+        "type": "debug",
+        "z": "c7135cb1.d9088",
+        "name": "CurrentUV",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 130,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4bfaf7ef.c9d7d8",
+        "type": "inject",
+        "z": "de180629.f440b8",
+        "name": "DisableLogging",
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 680,
+        "wires": [
+            [
+                "9a68370c.724908"
+            ]
+        ]
+    },
+    {
+        "id": "9a68370c.724908",
+        "type": "ui_switch",
+        "z": "de180629.f440b8",
+        "name": "EnableLoggingSwitch",
+        "label": "Enable logging",
+        "group": "cd45fc22.22276",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 340,
+        "y": 680,
+        "wires": [
+            [
+                "d9f35c10.e9f4d"
+            ]
+        ]
+    },
+    {
+        "id": "d9f35c10.e9f4d",
+        "type": "function",
+        "z": "de180629.f440b8",
+        "name": "SetLogging",
+        "func": "global.set(\"Logging\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ee9f41b.9693fc",
+        "type": "switch",
+        "z": "b26426f0.8849e8",
+        "name": "EnableDatabaseLogging",
+        "property": "Logging",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "df4f5234.ca849"
+            ]
+        ]
+    },
+    {
+        "id": "f195f2cd.2c8cc",
+        "type": "ui_template",
+        "z": "c7135cb1.d9088",
+        "group": "ff40eb7.cb65f18",
+        "name": "WindDirectionLabel",
+        "order": 9,
+        "width": "2",
+        "height": "2",
+        "format": "<!DOCTYPE html>\n<style>\n    .rotateimg\n    {\n        -webkit-transform:rotate({{msg.angle}});\n        -moz-transform: rotate({{msg.angle}});\n        -ms-transform: rotate({{msg.angle}});\n        -o-transform: rotate({{msg.angle}});\n        transform: rotate({{msg.angle}});\n    }\n    .center\n    {\n        margin: auto;\n        display: block;\n    }\n</style>\n\n<body>\n    <div class=\"center\">\n        <img ng-src=\"{{msg.payload}}\" class=\"rotateimg\" width=\"64\" height=\"64\">\n    </div>\n</body>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 1210,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d259dc5.566384",
+        "type": "ui_template",
+        "z": "de180629.f440b8",
+        "group": "ff40eb7.cb65f18",
+        "name": "BackgroundImage",
+        "order": 2,
+        "width": "2",
+        "height": "4",
+        "format": "<style>\n    body {\n        background-image: url(\"/Icons/Background.jpg\");\n    }\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "templateScope": "global",
+        "x": 1290,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e8f3ce88.9efbc",
+        "type": "function",
+        "z": "efaa1475.d638b8",
+        "name": "IncreaseSnowRainCounter",
+        "func": "var Temp = flow.get(\"SnowRainCounter\");\n\nif(msg.payload)\n{\n    Temp = Temp + 1;\n    \n    if(Temp > 1)\n    {\n        Temp = 0;\n    }\n    \n    flow.set(\"SnowRainCounter\", Temp);\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9dec6450.d6ef28",
+        "type": "inject",
+        "z": "de180629.f440b8",
+        "name": "SetRootDir",
+        "topic": "",
+        "payload": "/home/pi/WeatherStation",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "1b9daea.4adb551"
+            ]
+        ]
+    },
+    {
+        "id": "1b9daea.4adb551",
+        "type": "function",
+        "z": "de180629.f440b8",
+        "name": "SetOutputDir",
+        "func": "global.set(\"OutputDir\", msg.payload);\n\nmsg = {\n    filename : msg.payload + \"/Config.json\",\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "5f389ca5.41ee24"
+            ]
+        ]
+    },
+    {
+        "id": "a4e20871.cb0fb8",
+        "type": "function",
+        "z": "b26426f0.8849e8",
+        "name": "",
+        "func": "msg = \n{\n    payload : msg.payload,\n    filename : global.get(\"OutputDir\") + \"/Debug/CurrentWeather.json\",\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 60,
+        "wires": [
+            [
+                "27036787.81eee8"
+            ]
+        ]
+    },
+    {
+        "id": "8abb3460.36ad48",
+        "type": "function",
+        "z": "b26426f0.8849e8",
+        "name": "",
+        "func": "msg = \n{\n    payload : msg.payload,\n    filename : global.get(\"OutputDir\") + \"/Debug/ForecastWeather.json\",\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "7cf44ed4.ed302"
+            ]
+        ]
+    },
+    {
+        "id": "b9bac930.0e0948",
+        "type": "link out",
+        "z": "efaa1475.d638b8",
+        "name": "ForecastWeather",
+        "links": [
+            "c8f2487c.53a578"
+        ],
+        "x": 355,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3bdadc12.7a96b4",
+        "type": "json",
+        "z": "de180629.f440b8",
+        "name": "ParseConfig",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 890,
+        "y": 40,
+        "wires": [
+            [
+                "d4a33b7a.7de988",
+                "36b2d56a.6e4ffa",
+                "38d4df57.eafa2",
+                "a8aafed2.5aa8a"
+            ]
+        ]
+    },
+    {
+        "id": "36b2d56a.6e4ffa",
+        "type": "debug",
+        "z": "de180629.f440b8",
+        "name": "ShowConfig",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 1090,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5f389ca5.41ee24",
+        "type": "file in",
+        "z": "de180629.f440b8",
+        "name": "ReadConfigFile",
+        "filename": "",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": true,
+        "x": 440,
+        "y": 40,
+        "wires": [
+            [
+                "99921c14.3f58e"
+            ]
+        ]
+    },
+    {
+        "id": "d4a33b7a.7de988",
+        "type": "function",
+        "z": "de180629.f440b8",
+        "name": "SetConfig",
+        "func": "global.set(\"Config\", msg.payload);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1080,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a3a99c3.d8bd28",
+        "type": "ui_text",
+        "z": "de180629.f440b8",
+        "group": "786044d0.6dc3ec",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "name": "CurrentCity",
+        "label": "City",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1250,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f97fe88f.d2aad8",
+        "type": "ui_text",
+        "z": "de180629.f440b8",
+        "group": "786044d0.6dc3ec",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "name": "CurrentAPIKey",
+        "label": "API-Key",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1260,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "38d4df57.eafa2",
+        "type": "function",
+        "z": "de180629.f440b8",
+        "name": "GetCity",
+        "func": "msg = {\n    payload : msg.payload.City,\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1080,
+        "y": 220,
+        "wires": [
+            [
+                "6a3a99c3.d8bd28"
+            ]
+        ]
+    },
+    {
+        "id": "a8aafed2.5aa8a",
+        "type": "function",
+        "z": "de180629.f440b8",
+        "name": "GetKey",
+        "func": "msg = {\n    payload : msg.payload.APIKey,\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1080,
+        "y": 260,
+        "wires": [
+            [
+                "f97fe88f.d2aad8"
+            ]
+        ]
+    },
+    {
+        "id": "99921c14.3f58e",
+        "type": "switch",
+        "z": "de180629.f440b8",
+        "name": "ErrorHandling",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 640,
+        "y": 40,
+        "wires": [
+            [
+                "3bdadc12.7a96b4"
+            ],
+            []
+        ]
+    }
+]

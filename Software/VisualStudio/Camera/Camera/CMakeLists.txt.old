@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.7)
+project(Camera)
+find_package(OpenCV REQUIRED)
+set(LIBRARIES_FROM_REFERENCES "")
+add_executable(Camera Camera.cpp)
+target_link_libraries(Camera  "${LIBRARIES_FROM_REFERENCES}")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++11")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++11")

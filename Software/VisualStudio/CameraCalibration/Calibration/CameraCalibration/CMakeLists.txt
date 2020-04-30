@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.7)
+project(CameraCalibration)
+find_package(OpenCV REQUIRED)
+set(LIBRARIES_FROM_REFERENCES "")
+add_executable(CameraCalibration Calibration.cpp CameraCalibration.cpp)
+target_link_libraries(CameraCalibration ${OpenCV_LIBS} "${LIBRARIES_FROM_REFERENCES}")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -std=c++0x -pthread")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -std=c++11")
