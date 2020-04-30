@@ -1,193 +1,150 @@
-# Klasse fuer das serielle LCD Modul "SerLCD" von Sparkfun
-# www.kampis-elektroecke.de
+'''
+ * LCD_Serial.py
+ *
+ *  Copyright (C) Daniel Kampert, 2020
+ *	Website: www.kampis-elektroecke.de
+ *  File info: Python-Module for the SparkFun Serial LCD Backpack.
+
+  GNU GENERAL PUBLIC LICENSE:
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+  Errors and commissions should be reported to DanielKampert@kampis-elektroecke.de
+'''
 
 import serial
 
 class LCD_Serial:
-	
-	# Konstruktor
-	def __init__(self, device, baudrate, Zeichen):
-	
-		self.device = device
-		self.baudrate = baudrate
-		self.Zeichen = Zeichen
+	def __init__(self, Device, Baudrate, Characters):
+		self.__Device = Device
+		self.__Baudrate = Baudrate
+		self.__Characters = Characters
+		self.__UART = serial.Serial(self.__Device, self.__Baudrate)
 
-		self.UART = serial.Serial(self.device, self.baudrate)
-
-		# Schnittstelle oeffnen
-		if(not(self.UART.isOpen())):
-			self.UART.open()
+		if(not(self.__UART.isOpen())):
+			self.__UART.open()
 
 	def Clr(self):
+		self.__UART.write(chr(0xFE))
+		self.__UART.write(chr(0x01))
 
-		# Commandocode
-		self.UART.write(chr(0xFE))
-	
-		# Display loeschen
-		self.UART.write(chr(0x01))
-
-	# Legt die Position des Cursors fest
-	# Line = 1 - 4
-	# Position = 1 - 20
 	def Position(self, Line, CharPosition):
+		self.__UART.write(chr(0xFE))
 
-		self.Line = Line
-		self.CharPosition = CharPosition
-
-		# Commandocode
-		self.UART.write(chr(0xFE))
-	
-		# Auswahl der Zeile
-		if(self.Zeichen == 16):
-
-			if(self.Line == 1):
-				self.CharPosition = self.CharPosition - 1
-			elif(self.Line == 2):
-				self.CharPosition = self.CharPosition + 63
-			elif(self.Line == 3):
-				self.CharPosition = self.CharPosition + 15
-			elif(self.Line == 4):
-				self.CharPosition = self.CharPosition + 79
+		if(self.__Characters == 16):
+			if(Line == 1):
+				CharPosition = CharPosition - 1
+			elif(Line == 2):
+				CharPosition = CharPosition + 63
+			elif(Line == 3):
+				CharPosition = CharPosition + 15
+			elif(Line == 4):
+				CharPosition = CharPosition + 79
 			else:
-				print("Ungueltige Zeilenangabe!")
+				print("Invalid row!")
 				return -1
-
-		elif(self.Zeichen == 20):
-
-			if(self.Line == 1):
-				self.CharPosition = self.CharPosition - 1
+		elif(self.__Characters == 20):
+			if(Line == 1):
+				CharPosition = CharPosition - 1
 			elif(self.Line == 2):
-				self.CharPosition = self.CharPosition + 63
-			elif(self.Line == 3):
-				self.CharPosition = self.CharPosition + 19
-			elif(self.Line == 4):
-				self.CharPosition = self.CharPosition + 83
+				CharPosition = CharPosition + 63
+			elif(Line == 3):
+				CharPosition = CharPosition + 19
+			elif(Line == 4):
+				CharPosition = CharPosition + 83
 			else:
-				print("Ungueltige Zeilenangabe!")
+				print("Invalid row!")
 				return -1
 
 		else:
-			print("Ungueltige Zeichenangabe!")
+			print("Invalid Character!")
 			return -1
 
-		# Zeile einstellen
-		self.CharPosition = self.CharPosition + 128
-		self.UART.write(chr(self.CharPosition))
+		CharPosition = CharPosition + 128
+		self.__UART.write(chr(CharPosition))
 
-	# Einstellen der Helligkeit in 30 Stufen von 1-30
 	def SetBrightness(self, Brightness):
-	
-		self.Brightness = Brightness
-
-		# Wert pruefen
-		if(self.Brightness > 30):
-			print("Unguelige Helligkeit")
+		if(Brightness > 30):
+			print("Invalid brightness!")
 			return -1
 
-		# Helligkeitswert berechnen
-		self.Brightness = 128 + self.Brightness
-	
-		# Wert senden
-		self.UART.write(chr(0x7C))
-		self.UART.write(chr(self.Brightness))		
+		Brightness = 128 + self.Brightness
+		self.__UART.write(chr(0x7C))
+		self.__UART.write(chr(Brightness))		
 
-	# Blinkenden Cursor aktivieren
-	# On = Aktiviert
-	# Off = Deaktiviert
 	def EnableBlink(self, Enable):
-	
-		self.Enable = Enable
-
-		# Cursor aktivieren?
-		if(self.Enable == "Off"):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0C))
-		elif(self.Enable == "On"):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0D))
+		if(Enable == "Off"):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0C))
+		elif(Enable == "On"):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0D))
 		else:
-			print("Ungueltige Cursoreinstelllung!")
+			print("Invalid cursor settings!")
 			return -1
 
-	# Underline aktivieren
-	# On = Aktiviert
-	# Off = Deaktiviert	
 	def EnableUnderline(self, Enable):
-
-		self.Enable = Enable
-
-		# Unterstrich aktivieren?
-		if(self.Enable == "Off"):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0C))
-		elif(self.Enable == "On"):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0E))
+		if(Enable == "Off"):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0C))
+		elif(Enable == "On"):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0E))
 		else:
-			print("Ungueltige Cursoreinstelllung!")
+			print("Invalid cursor settings!")
 			return -1
-	
-	# Display deaktivieren
-	# On = Aktiviert
-	# Off = Deaktiviert	
-	def EnableVisual(self, Enable):
 
-		self.Enable = Enable
-		
-		# Display aktivieren / deaktivieren?
-		if(self.Enable == "Off"):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x08))
-		elif(self.Enable == "On"):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0C))
+	def EnableVisual(self, Enable):
+		if(Enable == "Off"):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x08))
+		elif(Enable == "On"):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0C))
 		else:
-			print("Ungueltige Cursoreinstelllung!")
+			print("Invalid cursor settings!")
 			return -1
 	
 	def SwitchSplash(self):
+		self.__UART.write(chr(0x7C))
+		self.__UART.write(chr(0x09))
 
-		self.UART.write(chr(0x7C))
-		self.UART.write(chr(0x09))
-
-	# Setzt den Cursor an eine bestimmte Position auf dem LCD
 	def SetCursor(self, CursorPosition):
-	
-		self.CursorPosition = 128 + self.CursorPosition + 1
-	
-		# Daten senden
-		self.UART.write(chr(0xFE))
-		self.UART.write(chr(self.CursorPosition))
-	
-	# Aendert die Baudrate des Modules
-	def ChangeBaud(self, Baud):
-	
-		self.Baud = Baud
-		
-		if(self.Baud == 2400):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0B))
-		elif(self.Baud == 4800):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0C))
-		elif(self.Baud == 9600):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0D))
-		elif(self.Baud == 14400):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0E))
-		elif(self.Baud == 19200):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x0F))
-		elif(self.Baud == 38400):
-			self.UART.write(chr(0xFE))
-			self.UART.write(chr(0x10))
+		self.__UART.write(chr(0xFE))
+		self.__UART.write(chr(128 + self.CursorPosition + 1))
+
+	def ChangeBaud(self, Baud):		
+		if(Baud == 2400):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0B))
+		elif(Baud == 4800):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0C))
+		elif(Baud == 9600):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0D))
+		elif(Baud == 14400):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0E))
+		elif(Baud == 19200):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x0F))
+		elif(Baud == 38400):
+			self.__UART.write(chr(0xFE))
+			self.__UART.write(chr(0x10))
 		else:
-			print("Ungueltige Baudrate!")
+			print("Invalid baud rate!")
 			return -1
 
-	# Text auf das LCD schreiben
 	def Write(self, Text):
-
-		self.Text = Text
-		self.UART.write(self.Text)
+		self.__UART.write(Text)
