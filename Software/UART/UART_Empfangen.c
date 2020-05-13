@@ -11,10 +11,10 @@
 
 #define BAUDRATE B9600
 
-char UART[]= "/dev/ttyAMA0";
-char FILEDEVICE[]= "/tmp/UART_Empfang.txt";
-char Recieve[255]= "";
-int Laenge;
+char UART[]= "/dev/serial0";
+char FILEDEVICE[]= "/tmp/UART_Empfangen.txt";
+char Message[255]= "";
+int Length;
 int File;
 struct termios newtio={};
 
@@ -25,16 +25,16 @@ void WriteFile(void)
 
 	Temp = open(FILEDEVICE, O_WRONLY | O_CREAT | O_APPEND);
 	
-	write(Temp, Recieve, Laenge);
+	write(Temp, Message, Length);
 	close(Temp);
-	system("chmod 644 /tmp/UART_Empfang.txt");
+	system("chmod 644 /tmp/UART_Empfangen.txt");
   
-	for(Counter = 0; Counter < Laenge; Counter++)
+	for(Counter = 0; Counter < Length; Counter++)
 	{
-        Recieve[Counter] = 0;
+        Message[Counter] = 0;
     }
 
-	Laenge = 0;
+	Length = 0;
 }
 
 unsigned char Empfangen(void)
@@ -46,12 +46,12 @@ unsigned char Empfangen(void)
     return Buffer;
 }
 
-int UART_Init(void )	
+int UART_Init(void)	
 {
     File = open(UART, O_RDONLY | O_NOCTTY);
     if(File < 0)
     {
-        printf("Fehler beim oeffnen von %s\n", UART);
+        printf("Can not open serial0! %s\n", UART);
         exit(-1);
     }
 
@@ -75,22 +75,21 @@ int main(int argc, char** argv)
     UART_Init();
     while(1)
     {
-        Zeichen = Empfangen();
-		if((Zeichen == 13))
+        Character = Empfangen();
+		if((Character == 13))
 		{
-			Recieve[Laenge] = 0x0D;
-			Laenge++;
+			Message[Length++] = 0x0D;
 			WriteFile();
 		}
-		else if(Zeichen > 13)
+		else if(Character > 13)
 		{
-			Recieve[Laenge] = Zeichen;
-			Laenge++;
-			if(Laenge > 254)
+			Message[Length++] = Character;
+			if(Length > 254)
 			{
 				WriteFile();
 			}
 		}
+
 		close(File);
 	}
 
