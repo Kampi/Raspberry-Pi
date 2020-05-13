@@ -2,7 +2,7 @@ from LCD_Serial import LCD_Serial
 import time
 
 # Objekt anlegen
-LCD = LCD_Serial("/dev/ttyAMA0", 9600, 20)
+LCD = LCD_Serial("/dev/serial0", 9600, 20)
 
 # Display loeschen
 LCD.Clr()
