@@ -20,7 +20,7 @@ sudo apt-get -y build-dep qt5-qmake
 sudo apt-get -y build-dep libqt5gui5
 sudo apt-get -y build-dep libqt5webengine-data
 sudo apt-get -y build-dep libqt5webkit5
-sudo apt-get -y install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev libxcb-xinerama0 gdbserver
+sudo apt-get -y install libudev-dev libinput-dev libts-dev libxcb-xinerama0-dev libxcb-xinerama0 gdbserver libglfw3-dev libgles2-mesa-dev libgtkglext1 libgtkglext1-dev
 
 echo -e ${Yellow}"Create symlinks..."${Reset}
 sudo ln -s /opt/vc/lib/libEGL.so /usr/lib/arm-linux-gnueabihf/libEGL.so.1.0.0

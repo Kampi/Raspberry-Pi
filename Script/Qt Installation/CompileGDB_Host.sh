@@ -36,5 +36,4 @@ echo -e ${Yellow}"Build GDB..."${Reset}
 make -j${CORES} | tee ${INSTALL_PATH}/log/make.log
 make -C gdb install | tee ${INSTALL_PATH}/log/install.log
 
-echo -e ${Yellow}"Clean up..."${Reset}
-rm -rf ${INSTALL_PATH}/temp
+echo -e ${Red}"Script finished!"${Reset}

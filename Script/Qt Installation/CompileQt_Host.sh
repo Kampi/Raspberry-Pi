@@ -28,8 +28,7 @@ echo -e ${Yellow}"Install packages..."${Reset}
 sudo apt-get update
 
 echo -e ${Yellow}"Create directories..."${Reset}
-mkdir -p ${TEMP_PATH}/log ${TEMP_PATH}/build
-mkdir -p ${SYSROOT_PATH}/sysroot
+mkdir -p ${TEMP_PATH}/log ${TEMP_PATH}/build ${SYSROOT_PATH}/sysroot
 
 cd ${TEMP_PATH}
 echo -e ${Yellow}"Download Qt..."${Reset}
@@ -55,19 +54,30 @@ ${TOOLCHAIN_PATH}/sysroot-relativelinks.py sysroot
 
 echo -e ${Yellow}"Configure Qt..."${Reset}
 cd ${TEMP_PATH}/build
-../qt-everywhere-src-5.12.8/configure -opengl es2 -device ${DEVICE} -device-option CROSS_COMPILE=${TOOLCHAIN_PATH}/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf- -sysroot ${SYSROOT_PATH}/sysroot -prefix ${INSTALL_PATH}/RaspberryQt -opensource -confirm-license -no-gbm -skip qtscript -nomake tests -nomake examples -make libs -pkg-config -no-use-gold-linker -v | tee ${TEMP_PATH}/log/config.log
+../qt-everywhere-src-5.12.8/configure -opengl es2 -device ${DEVICE} -device-option CROSS_COMPILE=${TOOLCHAIN_PATH}/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf- -sysroot ${SYSROOT_PATH}/sysroot -prefix ${INSTALL_PATH}/Qt -opensource -confirm-license -no-gbm -skip qtscript -nomake tests -nomake examples -make libs -pkg-config -no-use-gold-linker -v | tee ${TEMP_PATH}/log/config.log
 
 echo -e ${Yellow}"Build Qt..."${Reset}
 make -j${CORES} | tee ${TEMP_PATH}/log/make.log
 make install | tee ${TEMP_PATH}/log/install.log
 
 echo -e ${Yellow}"Upload /lib..."${Reset}
-#rsync -avz ${SYSROOT_PATH}/sysroot/lib root@${IP}:/ | tee ${TEMP_PATH}/log/copy_lib.log
+rsync -avz ${SYSROOT_PATH}/sysroot/lib root@${IP}:/ | tee ${TEMP_PATH}/log/copy_lib.log
+ssh root@${IP} "chown -R root:root /lib"
+
 echo -e ${Yellow}"Upload /usr/include..."${Reset}
-#rsync -avz ${SYSROOT_PATH}/sysroot/usr/include root@${IP}:/usr | tee ${TEMP_PATH}/log/copy_usr_include.log
+rsync -avz ${SYSROOT_PATH}/sysroot/usr/include root@${IP}:/usr | tee ${TEMP_PATH}/log/copy_usr_include.log
+ssh root@${IP} "chown -R root:root /usr/include"
+
 echo -e ${Yellow}"Upload /usr/lib..."${Reset}
-#rsync -avz ${SYSROOT_PATH}/sysroot/usr/lib root@${IP}:/usr | tee ${TEMP_PATH}/log/copy_usr_lib.log
+rsync -avz ${SYSROOT_PATH}/sysroot/usr/lib root@${IP}:/usr | tee ${TEMP_PATH}/log/copy_usr_lib.log
+ssh root@${IP} "chown -R root:root /usr/lib"
+
 echo -e ${Yellow}"Upload /opt/vc..."${Reset}
-#rsync -avz ${SYSROOT_PATH}/sysroot/opt/vc root@${IP}:/opt | tee ${TEMP_PATH}/log/copy_opt_vc.log
+rsync -avz ${SYSROOT_PATH}/sysroot/opt/vc root@${IP}:/opt | tee ${TEMP_PATH}/log/copy_opt_vc.log
+ssh root@${IP} "chown -R root:root /opt/vc"
+
 echo -e ${Yellow}"Upload /usr/local..."${Reset}
-#rsync -avz ${SYSROOT_PATH}/sysroot/usr/local root@${IP}:/usr | tee ${TEMP_PATH}/log/upload_usr_local.log
+rsync -avz ${SYSROOT_PATH}/sysroot/usr/local root@${IP}:/usr | tee ${TEMP_PATH}/log/upload_usr_local.log
+ssh root@${IP} "chown -R root:root /usr/local"
+
+echo -e ${Red}"Script finished!"${Reset}

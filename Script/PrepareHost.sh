@@ -15,7 +15,7 @@ Reset="\033[0m"
 #################
 
 echo -e ${Yellow}"Install packages..."${Reset}
-sudo apt-get install -y git cmake build-essential pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libatlas-base-dev gfortran wget unzip libz-dev zlib1g-dev gcc gcc-c++ git bison python gperf gdb-multiarch qt5-default texinfo make python3-devel
+sudo apt-get install -y git build-essential pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libatlas-base-dev gfortran wget unzip libz-dev zlib1g-dev gcc gcc-c++ git bison python python3-devel gperf gdb-multiarch qt5-default texinfo make cmake
 
 echo -e ${Yellow}"Generate SSH keys..."${Reset}
 ssh-keygen -t rsa -C root@${IP} -P "" -f ~/.ssh/rpi_root_id_rsa
@@ -31,3 +31,5 @@ git clone https://github.com/raspberrypi/tools
 echo -e ${Yellow}"Download Python script..."${Reset}
 wget https://raw.githubusercontent.com/riscv/riscv-poky/master/scripts/sysroot-relativelinks.py
 sudo chmod +x sysroot-relativelinks.py
+
+echo -e ${Red}"Script finished!"${Reset}
