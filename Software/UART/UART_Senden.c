@@ -17,10 +17,6 @@ int File;
 
 int UART_Init(void)
 { 
-    // O_RDONLY, O_WRONLY or O_RDWR -
-    // O_NDELAY (geht weiter, wenn keine Daten da sind und gibt "-1" zurueck)
-    // man 2 open fuer mehr Infos - see "man 2 open" for more info
-    // O_NOCTTY No ControllTeleType 
     File = open(MODEMDEVICE, O_WRONLY | O_NOCTTY);
     if(File < 0)
     {
@@ -44,7 +40,6 @@ int UART_Init(void)
 
 int main(int argc, char** argv) 
 {
-	// Variablen für das Hauptprogramm
 	char LineEnd[] = "\r\n";
 	int res;
 
