@@ -1,0 +1,15 @@
+MQTT:
+$ git clone https://github.com/qt/qtmqtt.git
+$ cd qtmqtt
+$ git checkout 5.12.18 				(Match the current Qt version)
+$ <Toolchain>/qmake
+$ make
+$ make install
+
+QtChart:
+$ wget http://download.qt.io/official_releases/qt/5.12/5.12.8/submodules/qtcharts-everywhere-src-5.12.8.tar.xz
+$ tar xf qtcharts-everywhere-src-5.12.8.tar.xz
+$ cd qtcharts-everywhere-src-5.12.8
+$ <Toolchain>/qmake
+$ make
+$ make install
