@@ -2,11 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QString>
+#include <QScrollBar>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QtMqtt/QtMqtt>
 
-#include <QDebug>
 #include "settingsdialog.h"
 
 namespace Ui

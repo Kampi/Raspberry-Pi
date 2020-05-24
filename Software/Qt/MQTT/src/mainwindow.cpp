@@ -3,7 +3,9 @@
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
                                           _mUi(new Ui::MainWindow),
-                                          _mClient(new QMqttClient(this))
+                                          _mClient(new QMqttClient(this)),
+                                          _mIp("127.0.0.1"),
+                                          _mPort(1883)
 {
     _mUi->setupUi(this);
     this->setWindowFlags(this->windowFlags() | Qt::MSWindowsFixedSizeDialogHint);
@@ -12,10 +14,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent),
 
     connect(_mClient, &QMqttClient::messageReceived, this, &MainWindow::MQTT_Received);
     connect(_mClient, &QMqttClient::connected, this, &MainWindow::MQTT_Connected);
-
-    // Default settings
-    _mIp = "127.0.0.1";
-    _mPort = 1883;
 
     _mUi->statusBar->showMessage(tr("Disconnected"));
 }
@@ -50,6 +48,7 @@ void MainWindow::MQTT_Received(const QByteArray& message, const QMqttTopicName& 
                 + message
                 + QLatin1Char('\n');
     _mUi->textEdit_Messages->insertPlainText(content);
+    _mUi->textEdit_Messages->verticalScrollBar()->setValue(_mUi->textEdit_Messages->verticalScrollBar()->maximum());
 }
 
 void MainWindow::on_pushButton_Publish_clicked()
