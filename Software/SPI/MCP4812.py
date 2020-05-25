@@ -1,35 +1,35 @@
-import spidev
 import time
+import spidev
 import RPi.GPIO as GPIO
 
-# Chipselect Pin
+# Chip-Select for the DAC
 CS = 25
 
-# Warnungen deaktivieren
 GPIO.setwarnings(False)
 
-# GPIO 25 als CS konfigurieren
+# Configure the CS pin as output
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(CS, GPIO.OUT)
 
-# Pin auf High setzen
+# Set the CS pin to high state
 GPIO.output(CS, GPIO.HIGH)
 
-# SPI Device oeffnen
+# Open SPI device
 SPI = spidev.SpiDev()
 SPI.open(0, 0)
+
+# Disable the internal CS
 SPI.no_cs = True
 
 while True:
 	for I in range(0, 256, 10):
-	
-		# Chipselect auf Low setzen
+		# Clear the CS pin
 		GPIO.output(CS, GPIO.LOW)
 
-		# Daten senden
+		# Transmit data
 		SPI.writebytes([144, I])
 
-		# Chipselect auf High setzen
+		# Set the CS pin
 		GPIO.output(CS, GPIO.HIGH)
 
 		time.sleep(1)
