@@ -17,10 +17,11 @@ GPIO.output(CS, GPIO.HIGH)
 
 # SPI Device oeffnen
 SPI = spidev.SpiDev()
-SPI.open(0,0)
+SPI.open(0, 0)
+SPI.no_cs = True
 
 while True:
-	for I in range(0,256,10):
+	for I in range(0, 256, 10):
 	
 		# Chipselect auf Low setzen
 		GPIO.output(CS, GPIO.LOW)
