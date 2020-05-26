@@ -30,8 +30,8 @@ sudo ln -s /opt/vc/lib/libGLESv2.so /opt/vc/lib/libGLESv2.so.2
 
 echo -e ${Yellow}"Create SSH directories..."${Reset}
 sudo mkdir -p /root/.ssh
-sudo chmod 400 /root/.ssh
+sudo chmod 700 /root/.ssh
 mkdir -p /home/pi/.ssh
-chmod 400 /home/pi/.ssh
+chmod 700 /home/pi/.ssh
 
 echo -e ${Red}"Script finished. Please reboot!"${Reset}
