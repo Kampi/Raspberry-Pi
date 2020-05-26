@@ -23,8 +23,8 @@ sudo apt-get install -y git cmake build-essential pkg-config libjpeg-dev libtiff
 echo -e ${Yellow}"Generate SSH keys..."${Reset}
 ssh-keygen -t rsa -C root@${IP} -P "" -f ~/.ssh/rpi_root_id_rsa
 ssh-keygen -t rsa -C pi@${IP} -P "" -f ~/.ssh/rpi_pi_id_rsa
-cat ~/.ssh/rpi_root_id_rsa.pub | ssh root@${IP} "cat >> .ssh/authorized_keys && chmod 640 .ssh/authorized_keys"
-cat ~/.ssh/rpi_pi_id_rsa.pub | ssh pi@${IP} "cat >> .ssh/authorized_keys && chmod 640 .ssh/authorized_keys"
+cat ~/.ssh/rpi_root_id_rsa.pub | ssh root@${IP} "cat >> .ssh/authorized_keys && chmod 400 .ssh/authorized_keys"
+cat ~/.ssh/rpi_pi_id_rsa.pub | ssh pi@${IP} "cat >> .ssh/authorized_keys && chmod 400 .ssh/authorized_keys"
 
 echo -e ${Yellow}"Download toolchain..."${Reset}
 mkdir -p ${TOOLCHAIN_PATH}
