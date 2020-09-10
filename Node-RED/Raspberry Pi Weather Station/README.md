@@ -16,7 +16,7 @@ Otherwise send an [e-mail](DanielKampert@kampis-elektroecke.de) if you have any 
 
 ## Status of the project
 
-__Under construction__
+__Needs rework!__
 
 ## Prepare the raspberry pi
 
