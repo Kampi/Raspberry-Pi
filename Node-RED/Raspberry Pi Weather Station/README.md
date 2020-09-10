@@ -20,8 +20,8 @@ __Needs rework!__
 
 ## Prepare the raspberry pi
 
-	- Install node-red
-	- Install all neccessary node-red packages
+ - Install node-red
+ - Install all neccessary node-red packages
 
 ## Use it
 
@@ -35,19 +35,19 @@ mysql-server python-mysqldb
 
 ## Image sources
 
-	- [White arrow](https://www.iconsdb.com/white-icons/arrow-up-8-64.html)
-	- [Weather icons](https://github.com/manifestinteractive/weather-underground-icons)
-	- [UI icons](https://material.io/tools/icons/?icon=delete&style=baseline)
+ - [White arrow](https://www.iconsdb.com/white-icons/arrow-up-8-64.html)
+ - [Weather icons](https://github.com/manifestinteractive/weather-underground-icons)
+ - [UI icons](https://material.io/tools/icons/?icon=delete&style=baseline)
 
 ## Raspberry Pi settings
 
-	- Disable HDMI
-	- Boot to desktop
-	- Set Chromium with node-red flow to autostart
-	- Remove local chromium data after closing the browser (Cookies menu)
-	- Set language in config tool
-	- W-LAN, 700 MHz clock
-	- node-red autostart
+ - Disable HDMI
+ - Boot to desktop
+ - Set Chromium with node-red flow to autostart
+ - Remove local chromium data after closing the browser (Cookies menu)
+ - Set language in config tool
+ - W-LAN, 700 MHz clock
+ - node-red autostart
 
 ## History
 
