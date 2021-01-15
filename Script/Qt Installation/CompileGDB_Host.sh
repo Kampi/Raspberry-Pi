@@ -18,6 +18,11 @@ Reset="\033[0m"
 echo -e ${Yellow}"Create directories..."${Reset}
 mkdir -p ${INSTALL_PATH}/log ${INSTALL_PATH}/bin ${INSTALL_PATH}/temp
 
+echo -e ${Yellow}"Install missing dependencies..."${Reset}
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install -y texinfo gcc g++ make python3-dev wget
+
 echo -e ${Yellow}"Download GDB sources..."${Reset}
 cd ${INSTALL_PATH}/temp
 wget https://ftp.gnu.org/gnu/gdb/gdb-${VERSION}.tar.xz
